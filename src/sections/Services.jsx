@@ -1,0 +1,124 @@
+import { motion } from "framer-motion";
+import {
+  FaPenNib,
+  FaCode,
+  FaPalette,
+  FaMobileAlt,
+  FaSearch,
+  FaLightbulb,
+} from "react-icons/fa";
+
+const services = [
+  {
+    title: "UI/UX Design",
+    desc: "Designing intuitive, visually appealing interfaces focused on user experience.",
+    icon: <FaPenNib />,
+    number: "01",
+  },
+  {
+    title: "Web Development",
+    desc: "Building fast, scalable and modern web applications with clean architecture.",
+    icon: <FaCode />,
+    number: "02",
+  },
+  {
+    title: "Branding",
+    desc: "Creating strong and memorable digital identities for businesses.",
+    icon: <FaPalette />,
+    number: "03",
+  },
+  {
+    title: "App Design",
+    desc: "Crafting modern and user-friendly mobile app experiences.",
+    icon: <FaMobileAlt />,
+    number: "04",
+  },
+  {
+    title: "SEO Optimization",
+    desc: "Improving search visibility and performance for better reach.",
+    icon: <FaSearch />,
+    number: "05",
+  },
+  {
+    title: "Consulting",
+    desc: "Providing strategic insights to grow your digital presence.",
+    icon: <FaLightbulb />,
+    number: "06",
+  },
+];
+
+const Services = () => {
+  return (
+    <section id="services" className="py-36 px-6 bg-[#0D0D0D] relative overflow-hidden">
+
+      {/* 🔥 Multi Glow Background */}
+      <div className="absolute w-[600px] h-[600px] bg-[#C9A96E]/10 blur-[160px] rounded-full top-[-200px] left-1/2 -translate-x-1/2"></div>
+      <div className="absolute w-[300px] h-[300px] bg-[#C9A96E]/10 blur-[120px] rounded-full bottom-10 right-10"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+
+        {/* Header */}
+        <div className="mb-20 text-center">
+          <h2 className="text-[#C9A96E] font-serif tracking-[0.3em] text-lg mb-6">
+            • SERVICES •
+          </h2>
+          <p className="text-gray-400 max-w-xl mx-auto">
+            Delivering high-quality digital solutions with a focus on design,
+            performance, and user experience.
+          </p>
+        </div>
+
+        {/* Grid */}
+        <div className="grid md:grid-cols-3 gap-12">
+
+          {services.map((service, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="group relative p-10 rounded-2xl border border-[#1a1a1a] bg-[#111]/70 backdrop-blur-xl transition duration-500 hover:border-[#C9A96E]/50"
+            >
+
+              {/* 🔢 Number (Background Style) */}
+              <span className="absolute top-6 right-6 text-5xl font-serif text-white/5 group-hover:text-[#C9A96E]/10 transition">
+                {service.number}
+              </span>
+
+              {/* Glow */}
+              <div className="absolute inset-0 bg-[#C9A96E]/5 opacity-0 group-hover:opacity-100 blur-2xl transition"></div>
+
+              {/* Icon */}
+              <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-[#C9A96E]/10 text-[#C9A96E] text-xl mb-6 group-hover:scale-110 transition">
+                {service.icon}
+              </div>
+
+              {/* Title */}
+              <h3 className="text-xl text-white mb-4 group-hover:text-[#C9A96E] transition">
+                {service.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {service.desc}
+              </p>
+
+              {/* Divider */}
+              <div className="w-0 h-[1px] bg-[#C9A96E] mt-8 group-hover:w-full transition-all duration-500"></div>
+
+              {/* Hover Arrow */}
+              <span className="absolute bottom-6 right-6 text-[#C9A96E] opacity-0 group-hover:opacity-100 translate-x-3 group-hover:translate-x-0 transition">
+                →
+              </span>
+
+            </motion.div>
+          ))}
+
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default Services;
