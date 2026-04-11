@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
-button{
+@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  @apply bg-gray-50 text-gray-900 overflow-x-hidden transition-colors duration-300 dark:bg-[#0D0D0D] dark:text-white;
+}
+
+button {
   @apply cursor-pointer;
 }

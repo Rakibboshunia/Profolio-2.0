@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FaPenNib,
   FaCode,
@@ -49,7 +50,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-36 px-6 bg-[#0D0D0D] relative overflow-hidden">
+    <section id="services" className="py-36 px-6 bg-[#f8f9fa] dark:bg-[#0D0D0D] relative overflow-hidden transition-colors duration-300">
 
       {/* 🔥 Multi Glow Background */}
       <div className="absolute w-[600px] h-[600px] bg-[#C9A96E]/10 blur-[160px] rounded-full top-[-200px] left-1/2 -translate-x-1/2"></div>
@@ -62,7 +63,7 @@ const Services = () => {
           <h2 className="text-[#C9A96E] font-serif tracking-[0.3em] text-lg mb-6">
             • SERVICES •
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
             Delivering high-quality digital solutions with a focus on design,
             performance, and user experience.
           </p>
@@ -77,11 +78,13 @@ const Services = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group relative p-10 rounded-2xl border border-[#1a1a1a] bg-[#111]/70 backdrop-blur-xl transition duration-500 hover:border-[#C9A96E]/50"
+              className="group relative p-10 rounded-2xl border border-gray-200 dark:border-[#1a1a1a] bg-white/70 dark:bg-[#111]/70 backdrop-blur-xl transition duration-500 hover:border-[#C9A96E]/50"
             >
+              {/* Clickable Overlay */}
+              <Link to="/contact" className="absolute inset-0 z-10"></Link>
 
               {/* 🔢 Number (Background Style) */}
-              <span className="absolute top-6 right-6 text-5xl font-serif text-white/5 group-hover:text-[#C9A96E]/10 transition">
+              <span className="absolute top-6 right-6 text-5xl font-serif text-black/5 dark:text-white/5 group-hover:text-[#C9A96E]/10 transition">
                 {service.number}
               </span>
 
@@ -94,12 +97,12 @@ const Services = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl text-white mb-4 group-hover:text-[#C9A96E] transition">
+              <h3 className="text-xl text-gray-900 dark:text-white mb-4 group-hover:text-[#C9A96E] transition">
                 {service.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                 {service.desc}
               </p>
 

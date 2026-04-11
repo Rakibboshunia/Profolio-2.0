@@ -57,7 +57,7 @@ const Testimonial = () => {
   return (
     <section
       onMouseMove={handleMove}
-      className="relative py-40 px-6 bg-[#0D0D0D] overflow-hidden"
+      className="relative py-40 px-6 bg-[#f8f9fa] dark:bg-[#0D0D0D] overflow-hidden transition-colors duration-300"
     >
 
       {/* 🌌 Dynamic Spotlight */}
@@ -100,7 +100,7 @@ const Testimonial = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -100, scale: 0.8 }}
             transition={{ duration: 0.8 }}
-            className="relative bg-[#111]/60 backdrop-blur-2xl border border-[#1a1a1a] rounded-3xl p-16 shadow-[0_0_80px_rgba(0,0,0,0.8)]"
+            className="relative bg-white/80 dark:bg-[#111]/60 backdrop-blur-2xl border border-gray-200 dark:border-[#1a1a1a] rounded-3xl p-16 shadow-2xl dark:shadow-[0_0_80px_rgba(0,0,0,0.8)]"
           >
 
             {/* Glow Border */}
@@ -108,7 +108,7 @@ const Testimonial = () => {
 
             <FaQuoteLeft className="text-[#C9A96E] text-4xl mx-auto mb-10" />
 
-            <p className="text-gray-300 text-xl max-w-2xl mx-auto">
+            <p className="text-gray-700 dark:text-gray-300 text-xl max-w-2xl mx-auto">
               “{data[index].text}”
             </p>
 
@@ -123,8 +123,8 @@ const Testimonial = () => {
                 src={data[index].image}
                 className="w-20 h-20 rounded-full border border-[#C9A96E] shadow-lg"
               />
-              <h4 className="text-white">{data[index].name}</h4>
-              <span className="text-gray-500 text-sm">
+              <h4 className="text-gray-900 dark:text-white">{data[index].name}</h4>
+              <span className="text-gray-600 dark:text-gray-500 text-sm">
                 {data[index].role}
               </span>
             </motion.div>
