@@ -17,11 +17,10 @@ import { useTheme } from "../../context/ThemeContext";
 const navLinks = [
   { name: "Home", path: "/", icon: <FaHome /> },
   { name: "About", path: "/about", icon: <FaUser /> },
+  { name: "Skills", path: "/skills", icon: <FaStar /> },
   { name: "Services", path: "/services", icon: <FaServicestack /> },
   { name: "Projects", path: "/projects", icon: <FaProjectDiagram /> },
-  { name: "Skills", path: "/skills", icon: <FaStar /> },
-  { name: "Reviews", path: "/testimonials", icon: <FaCommentDots /> },
-  { name: "Contact", path: "/contact", icon: <FaEnvelope /> },
+  { name: "Contact & FAQ", path: "/contact", icon: <FaEnvelope /> },
 ];
 
 const Navbar = () => {

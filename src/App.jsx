@@ -6,7 +6,6 @@ import Services from "./sections/Services";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import SkillsExperience from "./pages/SkillsExperience";
-import Testimonial from "./sections/Testimonial";
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
         <Route path="services" element={<Services />} />
         <Route path="projects" element={<Projects />} />
         <Route path="skills" element={<SkillsExperience />} />
-        <Route path="testimonials" element={<Testimonial />} />
         <Route path="contact" element={<Contact />} />
       </Route>
     </Routes>

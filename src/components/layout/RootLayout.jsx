@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import WorkingProcess from "../../sections/WorkingProcess";
 import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -21,6 +22,7 @@ const RootLayout = () => {
           <Outlet />
         </motion.main>
       </AnimatePresence>
+      {location.pathname !== "/contact" && <WorkingProcess />}
       <Footer />
     </>
   );
