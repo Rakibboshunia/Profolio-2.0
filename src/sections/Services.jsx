@@ -12,34 +12,46 @@ import {
 
 const services = [
   {
-    title: "UI/UX Design",
-    desc: "Designing intuitive, visually appealing interfaces focused on user experience.",
+    title: "Web Development",
+    desc: "Building unique website tailored to specific business needs and branding.",
+    icon: <FaCode />,
+    number: "02",
+  },
+  {
+    title: "Responsive Design",
+    desc: "Ensuring the website looks and works well on all devices (desktop, tablet, mobile).",
+    icon: <FaMobileAlt />,
+    number: "02",
+  },
+  {
+    title: "UI/UX Implementation",
+    desc: "Transform design mockups (Figma, Adobe XD, etc.) into fully functional web pages.",
     icon: <FaPenNib />,
     number: "01",
   },
   {
-    title: "Web Development",
-    desc: "Building fast, scalable and modern web applications with clean architecture.",
+    title: "Code Debugging and Maintenance",
+    desc: "Identifying and fixing issues in existing code to ensure optimal performance.",
     icon: <FaCode />,
-    number: "02",
+    number: "03",
+  },
+  {
+    title: "Integration Services",
+    desc: "Connecting the frontend with APIs or backends to enable data fetching and interactivity.",
+    icon: <FaCode />,
+    number: "03",
+  },
+  {
+    title: "Version Control and Deployment",
+    desc: "Managing code changes and deploying applications efficiently.",
+    icon: <FaSearch />,
+    number: "04",
   },
   {
     title: "Branding",
     desc: "Creating strong and memorable digital identities for businesses.",
     icon: <FaPalette />,
     number: "03",
-  },
-  {
-    title: "App Design",
-    desc: "Crafting modern and user-friendly mobile app experiences.",
-    icon: <FaMobileAlt />,
-    number: "04",
-  },
-  {
-    title: "SEO Optimization",
-    desc: "Improving search visibility and performance for better reach.",
-    icon: <FaSearch />,
-    number: "05",
   },
   {
     title: "Consulting",

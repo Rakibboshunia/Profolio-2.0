@@ -44,13 +44,17 @@ const Hero = () => {
             </p>
 
             <div className="mt-12 flex flex-wrap gap-5">
+              <MagneticButton>
               <Link to="/contact" className="px-8 py-3 flex items-center justify-center rounded-md bg-[#C9A96E] text-black font-medium tracking-wide hover:opacity-90 transition">
                 Start Project
               </Link>
+              </MagneticButton>
 
+              <MagneticButton>
               <Link to="/projects" className="px-8 py-3 flex items-center justify-center rounded-md border border-[#C9A96E] text-[#C9A96E] hover:bg-[#C9A96E] hover:text-black transition">
                 View Work
               </Link>
+              </MagneticButton>
 
               <MagneticButton>
                 <a href={cvFile} download="Rakib_Boshunia_CV.pdf" className="px-8 py-3 flex items-center justify-center rounded-md border border-gray-400 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-[#C9A96E] dark:hover:border-[#C9A96E] hover:text-[#C9A96E] dark:hover:text-[#C9A96E] transition">

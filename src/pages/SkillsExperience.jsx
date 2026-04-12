@@ -20,12 +20,12 @@ const mernSkills = [
 const experiences = [
   {
     role: "Software Developer",
-    company: "Betopia Group [ Fire AI ]",
+    company: "Fire AI - Betopia Group",
     year: "2025 - Present",
     desc: "Developing and deploying frontend web applications, e-commerce platforms, and interactive user interfaces.",
   },
   {
-    role: "Frontend Web Developer",
+    role: "Senior Frontend Developer",
     company: "Freelance",
     year: "2024 - 2025",
     desc: "Specialized in building responsive frontend architectures using React, Next.js, and Tailwind CSS with a focus on web performance.",

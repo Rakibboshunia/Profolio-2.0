@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import mypic from "../assets/boshunia.jpeg";
 import SEOHelmet from "../components/common/SEOHelmet";
 import cvFile from "../assets/MD. AL RAKEB RASEL BOSHUNIA .pdf";
+import MagneticButton from "../components/common/MagneticButton";
 
 const About = () => {
   return (
@@ -10,8 +11,10 @@ const About = () => {
       className="py-32 px-6 bg-[#f8f9fa] dark:bg-[#0D0D0D] relative overflow-hidden transition-colors duration-300"
     >
       <SEOHelmet title="About | Boshunia" />
+
       {/* 🔥 Background Glow */}
       <div className="absolute w-[400px] h-[400px] bg-[#C9A96E]/10 blur-[120px] rounded-full top-20 left-10"></div>
+      <div className="absolute w-[300px] h-[300px] bg-[#C9A96E]/10 blur-[100px] rounded-full bottom-10 right-10"></div>
 
       {/* Title */}
       <h2 className="text-center text-[#C9A96E] font-serif mb-24 tracking-[0.2em] text-lg relative z-10">
@@ -19,7 +22,7 @@ const About = () => {
       </h2>
 
       <div className="grid md:grid-cols-2 gap-24 items-center max-w-6xl mx-auto relative z-10">
-        
+
         {/* 🖼 Image Section */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
@@ -27,9 +30,13 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="relative group w-fit mx-auto"
         >
+          {/* Glow */}
+          <div className="absolute w-72 h-72 bg-[#C9A96E]/20 blur-[120px] rounded-full -z-10 top-10 left-10"></div>
+
           <img
             src={mypic}
-            className="w-80 rounded-xl grayscale group-hover:grayscale-0 transition duration-500"
+            className="w-80 rounded-xl grayscale group-hover:grayscale-0 transition duration-500 group-hover:scale-105"
+            style={{ transformStyle: "preserve-3d" }}
           />
 
           <div className="absolute -bottom-6 -left-6 w-80 h-80 border border-gray-700 group-hover:border-[#C9A96E] transition duration-500"></div>
@@ -48,11 +55,12 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="text-center md:text-left"
         >
-          <h3 className="text-2xl md:text-3xl text-[#C9A96E] mb-6 leading-snug">
+          {/* Gradient Heading */}
+          <h3 className="text-2xl md:text-3xl mb-6 leading-snug bg-gradient-to-r from-[#C9A96E] via-white to-[#C9A96E] text-transparent bg-clip-text">
             Helping brands grow with modern digital solutions
           </h3>
 
-          <p className="text-gray-600 dark:text-gray-400 leading-relaxed max-w-md">
+          <p className="text-gray-600 dark:text-gray-400 leading-relaxed max-w-md text-[15px] tracking-wide">
             I am a passionate Frontend Developer with experience in building 
             interactive, user-friendly, and scalable web applications. I focus on 
             creating clean UI, high performance, and responsive designs that deliver 
@@ -80,30 +88,56 @@ const About = () => {
           {/* 📊 Stats */}
           <div className="flex gap-10 mt-10 justify-center md:justify-start">
             <div>
-              <h4 className="text-[#C9A96E] text-2xl font-semibold">20+</h4>
+              <motion.h4
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-[#C9A96E] text-2xl font-semibold"
+              >
+                20+
+              </motion.h4>
               <p className="text-gray-700 dark:text-gray-500 text-sm">Projects</p>
             </div>
 
             <div>
-              <h4 className="text-[#C9A96E] text-2xl font-semibold">12+</h4>
+              <motion.h4
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-[#C9A96E] text-2xl font-semibold"
+              >
+                12+
+              </motion.h4>
               <p className="text-gray-700 dark:text-gray-500 text-sm">Clients</p>
             </div>
 
             <div>
-              <h4 className="text-[#C9A96E] text-2xl font-semibold">5★</h4>
+              <motion.h4
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-[#C9A96E] text-2xl font-semibold"
+              >
+                5★
+              </motion.h4>
               <p className="text-gray-700 dark:text-gray-500 text-sm">Rating</p>
             </div>
           </div>
 
+          {/* Divider */}
+          <div className="w-16 h-[2px] bg-[#C9A96E] mt-8 mx-auto md:mx-0"></div>
+
           {/* CTA */}
-          <a
-            href={cvFile}
-            target="_blank"
-            download="Rakib_Boshunia_CV.pdf"
-            className="inline-block mt-10 px-6 py-3 border border-[#C9A96E] text-[#C9A96E] rounded-2xl hover:bg-[#C9A96E] hover:text-black transition duration-300"
-          >
-            Download CV
-          </a>
+          <MagneticButton>
+            <a
+              href={cvFile}
+              target="_blank"
+              download="Rakib_Boshunia_CV.pdf"
+              className="inline-block mt-10 px-6 py-3 border border-[#C9A96E] text-[#C9A96E] rounded-2xl hover:bg-[#C9A96E] hover:text-black transition duration-300 hover:shadow-[0_0_30px_rgba(201,169,110,0.4)]"
+            >
+              Download CV
+            </a>
+          </MagneticButton>
 
           {/* Dots */}
           <div className="flex gap-4 mt-8 justify-center md:justify-start">
