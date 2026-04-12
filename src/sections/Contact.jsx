@@ -2,6 +2,8 @@ import { FaEnvelope, FaPhoneAlt, FaGithub, FaLinkedin, FaFacebookF, FaChevronDow
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
+import SEOHelmet from "../components/common/SEOHelmet";
 
 const socials = [
  {
@@ -27,7 +29,7 @@ const faqs = [
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("");
+  const [isSending, setIsSending] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
 
   const toggleFaq = (index) => {
@@ -41,12 +43,12 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
-      setStatus("error");
-      setTimeout(() => setStatus(""), 3000);
+      toast.error("Please fill out all fields.");
       return;
     }
 
-    setStatus("loading");
+    setIsSending(true);
+    const toastId = toast.loading("Sending message...");
 
     const templateParams = {
       from_name: formData.name,
@@ -54,7 +56,6 @@ const Contact = () => {
       message: formData.message,
     };
 
-    // Note: Replace these placeholders with your actual EmailJS configuration keys
     const SERVICE_ID = "service_02k63si";
     const TEMPLATE_ID = "template_glfyc3r";
     const PUBLIC_KEY = "D2PdGt4D4bP2JBsFF";
@@ -62,24 +63,69 @@ const Contact = () => {
     emailjs
       .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       .then((response) => {
-        setStatus("success");
+        toast.success("Message sent successfully!", { id: toastId });
         setFormData({ name: "", email: "", message: "" });
-        setTimeout(() => setStatus(""), 5000);
+        setIsSending(false);
       })
       .catch((err) => {
         console.error("FAILED...", err);
-        setStatus("failed");
-        setTimeout(() => setStatus(""), 5000);
+        toast.error("Failed to send. Please try again later.", { id: toastId });
+        setIsSending(false);
       });
   };
 
   return (
     <section id="contact" className="py-36 px-6 bg-[#f8f9fa] dark:bg-[#0D0D0D] relative overflow-hidden transition-colors duration-300">
-
+      <SEOHelmet title="FAQ & Contact | Boshunia" />
       {/* 🔥 Glow */}
       <div className="absolute w-[600px] h-[600px] bg-[#C9A96E]/10 blur-[160px] rounded-full top-0 left-1/2 -translate-x-1/2"></div>
 
-      <div className="max-w-6xl mx-auto relative z-10 grid md:grid-cols-2 gap-16 items-center">
+      {/* ================= ✅ FAQ (NOW FIRST) ================= */}
+      <div className="max-w-4xl mx-auto mt-0 relative z-10">
+        <h3 className="text-center text-[#C9A96E] font-serif mb-12 tracking-[0.2em] text-lg uppercase">
+          • Frequently Asked Questions •
+        </h3>
+        
+        <div className="flex flex-col gap-4">
+          {faqs.map((faq, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              className="border border-gray-200 dark:border-[#1a1a1a] rounded-xl overflow-hidden bg-white dark:bg-[#111] shadow-sm hover:border-[#C9A96E]/50 dark:hover:border-[#C9A96E]/50 transition-colors duration-300"
+            >
+              <button 
+                onClick={() => toggleFaq(i)}
+                className="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none"
+              >
+                <span className={`font-medium ${openFaq === i ? "text-[#C9A96E]" : "text-gray-900 dark:text-white"}`}>{faq.question}</span>
+                <span className="text-[#C9A96E]">
+                  {openFaq === i ? <FaChevronUp /> : <FaChevronDown />}
+                </span>
+              </button>
+              
+              <AnimatePresence>
+                {openFaq === i && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-white/5 pt-4">
+                      {faq.answer}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* ================= CONTACT (UNCHANGED, NOW LAST) ================= */}
+      <div className="max-w-6xl mx-auto mt-40 relative z-10 grid md:grid-cols-2 gap-16 items-center">
 
         {/* LEFT SIDE */}
         <motion.div
@@ -96,9 +142,7 @@ const Contact = () => {
             Have a project in mind? I’d love to hear about it. Let’s create something impactful and meaningful together.
           </p>
 
-          {/* Contact Info */}
           <div className="flex flex-col gap-5 text-gray-600 dark:text-gray-400">
-
             <a href="mailto:fireaiboshunia.info@gmail.com" className="flex items-center gap-3 w-fit hover:text-[#C9A96E] transition">
               <FaEnvelope />
               <span>official.alrakib@gmail.com</span>
@@ -108,10 +152,8 @@ const Contact = () => {
               <FaPhoneAlt />
               <span>+8801779296092</span>
             </a>
-
           </div>
 
-          {/* Social */}
           <div className="flex gap-4 mt-8">
             {socials.map((item, i) => (
               <a
@@ -128,7 +170,7 @@ const Contact = () => {
 
         </motion.div>
 
-        {/* RIGHT SIDE (FORM) */}
+        {/* RIGHT SIDE FORM */}
         <motion.form
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -166,78 +208,20 @@ const Contact = () => {
               className="bg-gray-50 dark:bg-[#0D0D0D] border border-gray-300 dark:border-[#1a1a1a] rounded-lg px-4 py-3 text-gray-900 dark:text-white focus:border-[#C9A96E] outline-none transition"
             ></textarea>
 
-            {status === "error" && (
-              <p className="text-red-500 text-sm">Please fill out all fields.</p>
-            )}
-            {status === "loading" && (
-              <p className="text-[#C9A96E] text-sm animate-pulse">Sending message...</p>
-            )}
-            {status === "success" && (
-              <p className="text-green-500 text-sm">Message sent successfully!</p>
-            )}
-            {status === "failed" && (
-              <p className="text-red-500 text-sm">Failed to send. Please try again later.</p>
-            )}
-
-            {/* Button */}
             <button 
               type="submit" 
-              disabled={status === "loading"}
+              disabled={isSending}
               className={`mt-4 px-6 py-3 rounded-lg bg-[#C9A96E] text-black font-medium transition ${
-                status === "loading" ? "opacity-50 cursor-not-allowed" : "hover:opacity-90"
+                isSending ? "opacity-50 cursor-not-allowed" : "hover:opacity-90"
               }`}
             >
-              {status === "loading" ? "Sending..." : "Send Message"}
+              {isSending ? "Sending..." : "Send Message"}
             </button>
 
           </div>
 
         </motion.form>
 
-      </div>
-
-      {/* 💡 FAQ Section */}
-      <div className="max-w-4xl mx-auto mt-40 relative z-10">
-        <h3 className="text-center text-[#C9A96E] font-serif mb-12 tracking-[0.2em] text-lg uppercase">
-          • Frequently Asked Questions •
-        </h3>
-        
-        <div className="flex flex-col gap-4">
-          {faqs.map((faq, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="border border-gray-200 dark:border-[#1a1a1a] rounded-xl overflow-hidden bg-white dark:bg-[#111] shadow-sm hover:border-[#C9A96E]/50 dark:hover:border-[#C9A96E]/50 transition-colors duration-300"
-            >
-              <button 
-                onClick={() => toggleFaq(i)}
-                className="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none"
-              >
-                <span className={`font-medium transition-colors duration-300 ${openFaq === i ? "text-[#C9A96E]" : "text-gray-900 dark:text-white"}`}>{faq.question}</span>
-                <span className="text-[#C9A96E] shrink-0 ml-4 transition-transform duration-300">
-                  {openFaq === i ? <FaChevronUp /> : <FaChevronDown />}
-                </span>
-              </button>
-              
-              <AnimatePresence>
-                {openFaq === i && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="px-6 pb-5 text-gray-600 dark:text-gray-400 text-sm leading-relaxed border-t border-gray-100 dark:border-white/5 pt-4">
-                      {faq.answer}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

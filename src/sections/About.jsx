@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import mypic from "../assets/boshunia.jpeg";
+import SEOHelmet from "../components/common/SEOHelmet";
+import cvFile from "../assets/MD. AL RAKEB RASEL BOSHUNIA .pdf";
 
 const About = () => {
   return (
@@ -7,6 +9,7 @@ const About = () => {
       id="about"
       className="py-32 px-6 bg-[#f8f9fa] dark:bg-[#0D0D0D] relative overflow-hidden transition-colors duration-300"
     >
+      <SEOHelmet title="About | Boshunia" />
       {/* 🔥 Background Glow */}
       <div className="absolute w-[400px] h-[400px] bg-[#C9A96E]/10 blur-[120px] rounded-full top-20 left-10"></div>
 
@@ -94,9 +97,9 @@ const About = () => {
 
           {/* CTA */}
           <a
-            href="/cv.pdf"
+            href={cvFile}
             target="_blank"
-            download
+            download="Rakib_Boshunia_CV.pdf"
             className="inline-block mt-10 px-6 py-3 border border-[#C9A96E] text-[#C9A96E] rounded-2xl hover:bg-[#C9A96E] hover:text-black transition duration-300"
           >
             Download CV

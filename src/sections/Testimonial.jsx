@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaQuoteLeft } from "react-icons/fa";
+import { FaQuoteLeft, FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 import img1 from "../assets/review/pic1.jpg";
 import img2 from "../assets/review/pic2.jpg";
@@ -96,55 +96,76 @@ const Testimonial = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 100, scale: 0.8 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -100, scale: 0.8 }}
-            transition={{ duration: 0.8 }}
-            className="relative bg-white/80 dark:bg-[#111]/60 backdrop-blur-2xl border border-gray-200 dark:border-[#1a1a1a] rounded-3xl p-16 shadow-2xl dark:shadow-[0_0_80px_rgba(0,0,0,0.8)]"
+            initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
+            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, x: -50, filter: "blur(10px)" }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="relative bg-white/80 dark:bg-white/5 backdrop-blur-3xl border border-gray-200 dark:border-white/10 rounded-[2rem] p-12 md:p-20 shadow-xl"
           >
-
             {/* Glow Border */}
-            <div className="absolute inset-0 rounded-3xl border border-[#C9A96E]/20"></div>
+            <div className="absolute inset-0 rounded-[2rem] border-2 border-[#C9A96E]/20 pointer-events-none"></div>
 
-            <FaQuoteLeft className="text-[#C9A96E] text-4xl mx-auto mb-10" />
+            {/* Quote Icon */}
+            <FaQuoteLeft className="text-[#C9A96E] opacity-30 text-6xl md:text-8xl absolute top-8 left-10 md:left-14 -z-10" />
 
-            <p className="text-gray-700 dark:text-gray-300 text-xl max-w-2xl mx-auto">
-              “{data[index].text}”
+            {/* Stars */}
+            <div className="flex justify-center gap-2 mb-8">
+              {[...Array(5)].map((_, i) => (
+                <FaStar key={i} className="text-[#C9A96E] text-lg" />
+              ))}
+            </div>
+
+            <p className="text-gray-800 dark:text-gray-200 text-xl md:text-3xl font-serif italic leading-relaxed max-w-4xl mx-auto">
+              "{data[index].text}"
             </p>
 
-            <div className="w-24 h-[1px] bg-[#C9A96E] mx-auto my-12"></div>
+            <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-[#C9A96E] to-transparent mx-auto my-10"></div>
 
-            {/* Avatar */}
-            <motion.div
-              whileHover={{ scale: 1.2 }}
-              className="flex flex-col items-center gap-4"
-            >
-              <img
-                src={data[index].image}
-                className="w-20 h-20 rounded-full border border-[#C9A96E] shadow-lg"
-              />
-              <h4 className="text-gray-900 dark:text-white">{data[index].name}</h4>
-              <span className="text-gray-600 dark:text-gray-500 text-sm">
-                {data[index].role}
-              </span>
-            </motion.div>
+            {/* Avatar & Info */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="relative p-1 rounded-full border border-[#C9A96E]/50">
+                <img
+                  src={data[index].image}
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover"
+                  alt={data[index].name}
+                />
+              </div>
+              <div>
+                <h4 className="text-gray-900 dark:text-white font-semibold text-lg tracking-wide">{data[index].name}</h4>
+                <span className="text-[#C9A96E] text-xs uppercase tracking-widest block mt-1">
+                  {data[index].role}
+                </span>
+              </div>
+            </div>
 
           </motion.div>
         </AnimatePresence>
 
         {/* Controls */}
-        <div className="flex justify-center gap-8 mt-14">
+        <div className="flex justify-center items-center gap-6 mt-14">
           <button
             onClick={() => setIndex(index - 1 < 0 ? data.length - 1 : index - 1)}
-            className="hover:scale-150 transition border border-[#C9A96E] text-[#C9A96E] px-4 py-2 rounded-md"
+            className="p-4 rounded-full border border-gray-300 dark:border-white/10 text-gray-600 dark:text-white/50 hover:border-[#C9A96E] hover:text-[#C9A96E] dark:hover:border-[#C9A96E] dark:hover:text-[#C9A96E] transition-all duration-300 hover:scale-110"
           >
-            ←
+            <FaChevronLeft size={16} />
           </button>
+
+          {/* Dots Indicator */}
+          <div className="flex gap-3">
+            {data.map((_, i) => (
+              <span 
+                key={i} 
+                onClick={() => setIndex(i)}
+                className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${index === i ? 'bg-[#C9A96E] w-6' : 'bg-gray-300 dark:bg-white/20'}`}
+              ></span>
+            ))}
+          </div>
+
           <button
             onClick={() => setIndex((index + 1) % data.length)}
-            className="hover:scale-150 transition border border-[#C9A96E] text-[#C9A96E] px-4 py-2 rounded-md"
+            className="p-4 rounded-full border border-gray-300 dark:border-white/10 text-gray-600 dark:text-white/50 hover:border-[#C9A96E] hover:text-[#C9A96E] dark:hover:border-[#C9A96E] dark:hover:text-[#C9A96E] transition-all duration-300 hover:scale-110"
           >
-            →
+            <FaChevronRight size={16} />
           </button>
         </div>
 

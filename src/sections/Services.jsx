@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Testimonial from "./Testimonial";
+import SEOHelmet from "../components/common/SEOHelmet";
 import {
   FaPenNib,
   FaCode,
@@ -53,7 +53,7 @@ const Services = () => {
   return (
     <>
       <section id="services" className="py-36 px-6 bg-[#f8f9fa] dark:bg-[#0D0D0D] relative overflow-hidden transition-colors duration-300">
-
+        <SEOHelmet title="Services | Boshunia" />
         {/* 🔥 Multi Glow Background */}
       <div className="absolute w-[600px] h-[600px] bg-[#C9A96E]/10 blur-[160px] rounded-full top-[-200px] left-1/2 -translate-x-1/2"></div>
       <div className="absolute w-[300px] h-[300px] bg-[#C9A96E]/10 blur-[120px] rounded-full bottom-10 right-10"></div>
@@ -123,9 +123,7 @@ const Services = () => {
 
         </div>
       </section>
-      
-      {/* Testimonials Appended to Services Page */}
-      <Testimonial />
+    
     </>
   );
 };

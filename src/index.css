@@ -10,3 +10,25 @@ body {
 button {
   @apply cursor-pointer;
 }
+
+/* Custom Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(201, 169, 110, 0.4);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(201, 169, 110, 0.8);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}

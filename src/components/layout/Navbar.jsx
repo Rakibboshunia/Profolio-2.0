@@ -20,7 +20,7 @@ const navLinks = [
   { name: "Skills", path: "/skills", icon: <FaStar /> },
   { name: "Services", path: "/services", icon: <FaServicestack /> },
   { name: "Projects", path: "/projects", icon: <FaProjectDiagram /> },
-  { name: "Contact & FAQ", path: "/contact", icon: <FaEnvelope /> },
+  { name: "FAQ & Contact", path: "/contact", icon: <FaEnvelope /> },
 ];
 
 const Navbar = () => {

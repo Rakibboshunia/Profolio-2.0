@@ -3,12 +3,29 @@ import Footer from "./Footer";
 import WorkingProcess from "../../sections/WorkingProcess";
 import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import CustomCursor from "../common/CustomCursor";
+import ScrollToTop from "../common/ScrollToTop";
+import { Toaster } from "react-hot-toast";
+import { useTheme } from "../../context/ThemeContext";
 
 const RootLayout = () => {
   const location = useLocation();
+  const { theme } = useTheme();
 
   return (
     <>
+      <CustomCursor />
+      <ScrollToTop />
+      <Toaster 
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: theme === 'dark' ? '#111' : '#fff',
+            color: theme === 'dark' ? '#fff' : '#333',
+            border: theme === 'dark' ? '1px solid #333' : '1px solid #eaeaea',
+          },
+        }}
+      />
       <Navbar />
       <AnimatePresence mode="wait">
         <motion.main
