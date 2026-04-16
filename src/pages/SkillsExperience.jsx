@@ -34,7 +34,7 @@ const experiences = [
 
 const SkillsExperience = () => {
   return (
-    <section className="py-20 px-6 bg-[#f8f9fa] dark:bg-[#0D0D0D] relative overflow-hidden min-h-screen transition-colors duration-300">
+    <section id="skills-experience" className="py-20 px-6 bg-[#f8f9fa] dark:bg-[#0D0D0D] relative overflow-hidden min-h-screen transition-colors duration-300">
       <SEOHelmet title="Skills & Experience | Boshunia" />
       {/* Background glow */}
       <div className="absolute w-[600px] h-[600px] bg-[#C9A96E]/10 blur-[150px] rounded-full top-[-100px] left-1/2 -translate-x-1/2"></div>
