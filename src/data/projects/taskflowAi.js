@@ -28,7 +28,6 @@ export const taskflowAi = {
     taskflow6, taskflow7, taskflow8, taskflow9, taskflow10,
     taskflow11, taskflow12, taskflow13,
   ],
-  githubLink: "https://github.com/Rakibboshunia/Taskflow-AI",
   liveLink: "https://taskflow-ai-bice-eta.vercel.app/",
   overview: "TaskFlow AI is a comprehensive project management dashboard designed with a modern dark theme and premium gradient UI. It features real-time analytics, modular task views, and an integrated AI assistant to enhance team productivity and workflow management.",
   challenges: "Designing a sophisticated, dark-themed UI that is both visually striking and highly functional. The challenge included implementing a responsive sidebar navigation and complex interactive components like analytics charts without compromising performance.",

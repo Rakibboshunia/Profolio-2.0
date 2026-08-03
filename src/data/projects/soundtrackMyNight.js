@@ -10,7 +10,6 @@ export const soundtrackMyNight = {
   description: "A complete platform featuring a high-energy interactive landing page combined with an AI-powered playlist generation dashboard.",
   tags: ["#React", "#SpotifyAPI", "#FramerMotion", "#TailwindCSS"],
   image: img5,
-  githubLink: "https://github.com/Rakibboshunia/Rory_Music_Playlist",
   liveLink: "https://soundtrackmynight.com/",
   overview: "Soundtrack My Night is a creative digital platform that helps couples generate the perfect wedding playlist. The site features a 60-second quiz and instant Spotify integration.",
   challenges: "Creating a visual identity that feels both celebratory and technologically advanced, while ensuring a smooth transition between the landing page and the interactive quiz component.",

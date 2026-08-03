@@ -3,35 +3,56 @@ import { motion } from "framer-motion";
 import SEOHelmet from "../components/common/SEOHelmet";
 
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaWordpress, FaElementor } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiJavascript, SiTailwindcss, SiNextdotjs, SiBootstrap } from "react-icons/si";
+import { SiMongodb, SiExpress, SiJavascript, SiTailwindcss, SiNextdotjs, SiTypescript, SiPostgresql, SiPrisma, SiShopify, SiBootstrap } from "react-icons/si";
 
 const mernSkills = [
   { name: "HTML5", icon: <FaHtml5 /> },
   { name: "CSS3", icon: <FaCss3Alt /> },
   { name: "JavaScript", icon: <SiJavascript /> },
   { name: "Bootstrap", icon: <SiBootstrap /> },
+  { name: "TypeScript", icon: <SiTypescript /> },
   { name: "Tailwind CSS", icon: <SiTailwindcss /> },
   { name: "React.js", icon: <FaReact /> },
   { name: "Next.js", icon: <SiNextdotjs /> },
   { name: "Node.js", icon: <FaNodeJs /> },
   { name: "Express.js", icon: <SiExpress /> },
   { name: "MongoDB", icon: <SiMongodb /> },
+  { name: "PostgreSQL", icon: <SiPostgresql /> },
+  { name: "Prisma", icon: <SiPrisma /> },
   { name: "WordPress", icon: <FaWordpress /> },
-  { name: "Elementor Pro", icon: <FaElementor /> },
+  { name: "Shopify", icon: <SiShopify /> },
 ];
 
 const experiences = [
   {
-    role: "Front-end Developer",
-    company: "Fire AI | Dhaka, Bangladesh",
+    role: "Frontend Developer",
+    company: "Fire AI | On-Site",
     year: "October 2025 – Present",
-    desc: "Developed scalable and responsive web applications using React.js and Next.js. Collaborated with cross-functional teams to deliver high-quality, user-focused digital solutions.",
+    desc: "Developing scalable, high-performance web applications using React.js, Next.js, Node.js, and MongoDB. Focusing on modern software architecture and clean code to deliver production-ready solutions.",
   },
   {
-    role: "Front-end Developer",
-    company: "Freelance | Part-time",
-    year: "February 2025 – Present",
-    desc: "Developed responsive web applications using React.js. Built business, e-commerce, and portfolio websites.",
+    role: "WordPress Developer",
+    company: "Fire AI | On-Site",
+    year: "October 2025 - Present",
+    desc: "Developing and maintaining custom WordPress sites, designing high-converting Elementor pages, and optimizing performance for business platforms and agency websites.",
+  },
+  {
+    role: "Full Stack & CMS Developer",
+    company: "Freelance | Remote",
+    year: "2025 – Present",
+    desc: "Building custom business websites, eCommerce stores, and SaaS platforms using MERN stack, WordPress, and Shopify tailored to business needs.",
+  },
+  {
+    role: "MERN Stack Intern",
+    company: "Ostad | Remote",
+    year: "February 2024 - August 2025",
+    desc: "Completed an intensive internship focusing on full-stack web development using React.js, Node.js, Express, and MongoDB. Built and deployed full-featured web applications.",
+  },
+  {
+    role: "Python Development Intern",
+    company: "Interactive Cares | Remote",
+    year: "October 2025 - February 2026",
+    desc: "Gained hands-on experience in backend development and scripting using Python. Contributed to real-world projects and problem-solving tasks.",
   },
   {
     role: "Graphic Designer For POD (print on demand) Store",

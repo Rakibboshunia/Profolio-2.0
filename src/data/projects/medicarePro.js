@@ -36,7 +36,6 @@ export const medicarePro = {
     medicareAnalytics,
     medicareSettings,
   ],
-  githubLink: "https://github.com/Rakibboshunia/MediCare-Pro",
   liveLink: "https://medi-care-pro-swart.vercel.app/",
   overview: "MediCare Pro is a comprehensive hospital management dashboard designed with a modern glassmorphic aesthetic and dynamic gradients. It provides a cohesive, professional-grade healthcare administration interface covering core modules like Bed Management, Emergency, Nurses/Staff, Blood Bank, and Ambulance.",
   challenges: "Implementing a visually striking glassmorphic design and real-time data visualization across numerous complex administrative pages while ensuring a responsive, highly performant frontend architecture.",

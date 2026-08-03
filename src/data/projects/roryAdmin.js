@@ -10,7 +10,6 @@ export const roryAdmin = {
   description: "A feature-rich administrative dashboard built for managing a creative platform, focusing on data visualization and user management.",
   tags: ["#React", "#Chart.js", "#Firebase", "#TailwindCSS"],
   image: img7,
-  githubLink: "https://github.com/Rakibboshunia/Rory-Admin-Dashboard",
   liveLink: "https://rory-admin-dashboard.vercel.app/",
   overview: "Rory Admin Dashboard is the nerve center for the Soundtrack My Night ecosystem. It provides administrators with a birds-eye view of user activity, playlist generation metrics, and revenue tracking.",
   challenges: "Integrating disparate data streams into a cohesive, high-performance dashboard that provides actionable insights without overwhelming the user.",

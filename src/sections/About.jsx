@@ -1,11 +1,63 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import mypic from "../assets/boshunia-about.jpg";
 import SEOHelmet from "../components/common/SEOHelmet";
 import cvFile from "../assets/MD. AL RAKEB RASEL BOSHUNIA.pdf";
 import MagneticButton from "../components/common/MagneticButton";
 import SpotlightCard from "../components/common/SpotlightCard";
+const CodeTerminal = () => {
+  const codeLines = [
+    { text: "const developer = {", color: "text-blue-400" },
+    { text: "  name: 'Md. Al Rakeb Rasel Boshunia',", color: "text-green-400" },
+    { text: "  role: 'Software Developer',", color: "text-green-400" },
+    { text: "  skills: ['React', 'Next.js', 'Node.js', 'MongoDB'],", color: "text-yellow-300" },
+    { text: "  passion: 'Building scalable web applications',", color: "text-green-400" },
+    { text: "  isAvailableForHire: true", color: "text-purple-400" },
+    { text: "};", color: "text-blue-400" },
+    { text: "", color: "" },
+    { text: "developer.buildPremiumExperience();", color: "text-yellow-400" }
+  ];
+
+  return (
+    <div className="relative w-full aspect-[4/5] rounded-[3rem] bg-[#0d1117] border border-white/10 shadow-2xl overflow-hidden flex flex-col font-mono text-xs md:text-sm group hover:border-[#C9A96E]/30 transition-all duration-700">
+      {/* Mac window header */}
+      <div className="flex items-center gap-2 px-6 py-4 bg-white/5 border-b border-white/5">
+        <div className="w-3 h-3 rounded-full bg-red-500"></div>
+        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+        <div className="w-3 h-3 rounded-full bg-green-500"></div>
+        <span className="ml-4 text-[10px] text-gray-500 font-sans tracking-widest uppercase">developer.js</span>
+      </div>
+      
+      {/* Code Area */}
+      <div className="p-6 md:p-8 flex-grow flex flex-col gap-3 overflow-hidden z-10 relative">
+        {codeLines.map((line, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 + (i * 0.1), duration: 0.5 }}
+            className={`${line.color} flex`}
+          >
+            <span className="text-gray-600 mr-4 select-none font-sans">{i + 1}</span>
+            <span className="whitespace-pre flex-wrap">{line.text}</span>
+          </motion.div>
+        ))}
+        {/* Blinking Cursor */}
+        <motion.div
+          animate={{ opacity: [1, 0, 1] }}
+          transition={{ repeat: Infinity, duration: 0.8 }}
+          className="mt-1 ml-8 w-2 h-4 bg-[#C9A96E]"
+        ></motion.div>
+      </div>
+
+      {/* Subtle Glow inside terminal */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] pointer-events-none rounded-full group-hover:bg-blue-500/20 transition-all duration-700"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#C9A96E]/10 blur-[100px] pointer-events-none rounded-full group-hover:bg-[#C9A96E]/20 transition-all duration-700"></div>
+    </div>
+  );
+};
+
+
 
 const Counter = ({ end, duration = 2, suffix = "" }) => {
   const [count, setCount] = useState(0);
@@ -77,14 +129,7 @@ const About = () => {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 relative group"
           >
-            <div className="relative w-full aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl group border-2 border-transparent hover:border-[#C9A96E]/30 transition-all duration-700">
-              <img
-                src={mypic}
-                alt="Rakib Boshunia"
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent opacity-80"></div>
-            </div>
+            <CodeTerminal />
 
             {/* Floating Experience Badge */}
             <motion.div
@@ -121,9 +166,9 @@ const About = () => {
             </h3>
 
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base md:text-lg mb-8 max-w-xl">
-              As a specialized Frontend Developer, I bridge the gap between complex functionality and stunning visual design. I build applications that don't just work flawlessly—they leave a lasting impression.
+              I'm a Software Developer passionate about building modern, scalable, and high-performance web applications. My primary expertise includes React.js, Next.js, TypeScript, JavaScript, Node.js, Express.js, and MongoDB.
               <br /><br />
-              My expertise lies in React ecosystem, interactive animations, and responsive architectures, ensuring every project is highly scalable, fast, and visually premium.
+              In addition to modern JavaScript development, I also specialize in WordPress and Shopify development, building custom business websites, eCommerce stores, landing pages, and CMS-based solutions tailored to business needs.
             </p>
 
             {/* 📊 Stats Grid */}

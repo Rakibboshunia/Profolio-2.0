@@ -54,8 +54,8 @@ const Projects = () => {
                   setShowAll(false);
                 }}
                 className={`pb-2 border-b-2 transition-all duration-500 ${activeCategory === cat
-                    ? "border-[#C9A96E] text-[#C9A96E]"
-                    : "border-transparent text-gray-500 hover:text-gray-300"
+                  ? "border-[#C9A96E] text-[#C9A96E]"
+                  : "border-transparent text-gray-500 hover:text-gray-300"
                   }`}
               >
                 {cat}
@@ -134,15 +134,6 @@ const ProjectCard = ({ project, index }) => (
       </div>
 
       <div className="py-6 px-8 flex gap-6 items-center border-t border-white/5 bg-neutral-900/10 dark:bg-black/10">
-        <a
-          href={project.githubLink}
-          target="_blank"
-          rel="noreferrer"
-          className="text-gray-500 hover:text-[#C9A96E] transition-colors"
-        >
-          <FaGithub size={20} />
-        </a>
-        <div className="w-[1px] h-6 bg-white/10"></div>
         <p className="text-xs text-gray-500 line-clamp-1 flex-grow">
           {project.description}
         </p>

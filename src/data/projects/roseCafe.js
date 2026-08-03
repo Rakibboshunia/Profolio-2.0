@@ -10,7 +10,6 @@ export const roseCafe = {
   description: "A premium interactive cafe and restaurant website featuring a dynamic digital menu, integrated reservation system, and fluid animations.",
   tags: ["#React", "#TailwindCSS", "#FramerMotion"],
   image: roseCafeImg,
-  githubLink: "https://github.com/Rakibboshunia/Rose_Cafe-Restaurent",
   liveLink: "https://rose-cafe-restaurent.vercel.app/",
   overview: "Rose Cafe & Restaurant is an immersive digital dining experience. It features an interactive food and beverage menu showcase, direct reservation booking mechanisms, customer reviews integration, and highly aesthetic responsive sections reflecting the cozy, elegant ambiance of the cafe.",
   challenges: "Building a smooth, visually appealing cafe landing page with highly polished scrolling dynamics, interactive menu filters, and a reservation system that adapts perfectly to mobile screens.",

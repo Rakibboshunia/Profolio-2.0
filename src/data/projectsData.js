@@ -14,9 +14,11 @@ import { wordpressProjectsData } from "./wordpressProjectsData";
 import { medicarePro } from "./projects/medicarePro";
 import { nextResumeAi } from "./projects/nextResumeAi";
 import { taskflowAi } from "./projects/taskflowAi";
+import { enterpriseErp } from "./projects/enterpriseErp";
 
 
 export const projectsData = [
+  enterpriseErp,
   medicarePro,
   nextResumeAi,
   taskflowAi,

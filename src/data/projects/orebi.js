@@ -10,7 +10,6 @@ export const orebi = {
   description: "A premium e-commerce platform featuring complex filtering, cart management, and a high-performance architecture.",
   tags: ["#React", "#TailwindCSS", "#Redux"],
   image: img1,
-  githubLink: "https://github.com/Rakibboshunia",
   liveLink: "https://orebi-ecommerce.vercel.app/",
   overview: "OREBI is a fully functional front-end e-commerce concept built for performance and premium aesthetics. It prioritizes user experience through intuitive filtering and robust cart state management.",
   challenges: "One of the major challenges was ensuring that category nesting and complex attribute filtering didn't affect the scroll performance and that state was managed smoothly without redundant re-renders.",

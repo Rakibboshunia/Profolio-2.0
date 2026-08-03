@@ -10,7 +10,6 @@ export const dayNightNews = {
   description: "A sophisticated pixel-perfect recreation of a major news platform, featuring dynamic themes and a high-density information architecture.",
   tags: ["#React", "#TailwindCSS", "#ContextAPI"],
   image: img6,
-  githubLink: "https://github.com/Rakibboshunia/BBC-News-Copy",
   liveLink: "https://bbc-news-dublicate.vercel.app/",
   overview: "Day-Night News is a technical demonstration of complex UI cloning and responsive design. It replicates the BBC News interface with precision, focusing on accessibility and readability.",
   challenges: "Managing a highly dense content grid and ensuring that the typography remains perfectly legible across various screen sizes and themes (Light vs. Dark).",

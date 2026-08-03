@@ -10,7 +10,6 @@ export const dailyBasket = {
   description: "A complete grocery e-commerce application featuring both an engaging consumer landing page and an integrated management dashboard.",
   tags: ["#React", "#TailwindCSS", "#E-commerce"],
   image: dailyBasketImg,
-  githubLink: "https://github.com/Rakibboshunia",
   liveLink: "https://daily-basket-puce.vercel.app/",
   overview: "Daily Basket is a fully functional grocery store website that provides users with a dynamic shopping experience. It features an extensive product catalog, advanced filtering and sorting options, and a smooth checkout flow.",
   challenges: "Implementing complex cart state management and advanced product filtering while maintaining a fast, responsive user interface across all devices.",

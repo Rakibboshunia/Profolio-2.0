@@ -9,7 +9,6 @@ export const eduNest = {
   year: "2026",
   tags: ["#React", "#TailwindCSS", "#Vite", "#FramerMotion"],
   image: eduNestImg,
-  githubLink: "https://github.com/Rakibboshunia",
   liveLink: "https://edu-nest-eta.vercel.app/",
   description: "EduNest is a comprehensive SaaS platform featuring both a high-converting landing page and a powerful analytics dashboard for education management.",
   overview: "EduNest was built to modernize the way educational institutions manage their daily operations. Traditional school management systems often suffer from outdated interfaces, poor user experience, and limited accessibility. EduNest addresses these issues by providing a clean, intuitive, and highly interactive dashboard that allows administrators, teachers, and staff to access important information efficiently. The platform combines modern UI design principles with real-time data visualization to create a seamless management experience.",
