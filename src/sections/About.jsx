@@ -1,58 +1,171 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import SEOHelmet from "../components/common/SEOHelmet";
 import cvFile from "../assets/MD. AL RAKEB RASEL BOSHUNIA.pdf";
 import MagneticButton from "../components/common/MagneticButton";
 import SpotlightCard from "../components/common/SpotlightCard";
+
 const CodeTerminal = () => {
+  const [visibleLines, setVisibleLines] = useState(0);
+  const [currentChar, setCurrentChar] = useState(0);
+  const [activeLine, setActiveLine] = useState(0);
+  const intervalRef = useRef(null);
+
   const codeLines = [
-    { text: "const developer = {", color: "text-blue-400" },
-    { text: "  name: 'Md. Al Rakeb Rasel Boshunia',", color: "text-green-400" },
-    { text: "  role: 'Software Developer',", color: "text-green-400" },
-    { text: "  skills: ['React', 'Next.js', 'Node.js', 'MongoDB'],", color: "text-yellow-300" },
-    { text: "  passion: 'Building scalable web applications',", color: "text-green-400" },
-    { text: "  isAvailableForHire: true", color: "text-purple-400" },
-    { text: "};", color: "text-blue-400" },
-    { text: "", color: "" },
-    { text: "developer.buildPremiumExperience();", color: "text-yellow-400" }
+    [
+      { text: "const ", cls: "text-blue-400 font-bold" },
+      { text: "developer", cls: "text-white" },
+      { text: " = {", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  name", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "'Md. Al Rakeb Rasel Boshunia'", cls: "text-[#9ecbff]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  role", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "'Full Stack Developer'", cls: "text-[#9ecbff]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  location", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "'Bangladesh 🇧🇩'", cls: "text-[#9ecbff]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  skills", cls: "text-[#79b8ff]" },
+      { text: ": [", cls: "text-gray-400" },
+      { text: "'React'", cls: "text-[#f97583]" },
+      { text: ", ", cls: "text-gray-400" },
+      { text: "'Next.js'", cls: "text-[#f97583]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "           ", cls: "" },
+      { text: "'Node.js'", cls: "text-[#f97583]" },
+      { text: ", ", cls: "text-gray-400" },
+      { text: "'MongoDB'", cls: "text-[#f97583]" },
+      { text: "],", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  open", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "true", cls: "text-[#79b8ff] font-bold" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "};", cls: "text-gray-400" },
+    ],
+    [],
+    [
+      { text: "developer", cls: "text-white" },
+      { text: ".", cls: "text-gray-400" },
+      { text: "buildSomethingGreat", cls: "text-[#b392f0]" },
+      { text: "();", cls: "text-gray-400" },
+    ],
   ];
 
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setVisibleLines((prev) => {
+        if (prev < codeLines.length) {
+          setActiveLine(prev);
+          return prev + 1;
+        } else {
+          clearInterval(intervalRef.current);
+          return prev;
+        }
+      });
+    }, 220);
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
   return (
-    <div className="relative w-full aspect-[4/5] rounded-[3rem] bg-[#0d1117] border border-white/10 shadow-2xl overflow-hidden flex flex-col font-mono text-xs md:text-sm group hover:border-[#C9A96E]/30 transition-all duration-700">
+    <div className="relative w-full aspect-[4/5] rounded-[2rem] bg-[#0d1117] border border-white/10 shadow-2xl overflow-hidden flex flex-col font-mono text-xs md:text-sm group hover:border-[#C9A96E]/40 transition-all duration-700">
+
       {/* Mac window header */}
-      <div className="flex items-center gap-2 px-6 py-4 bg-white/5 border-b border-white/5">
-        <div className="w-3 h-3 rounded-full bg-red-500"></div>
-        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-        <div className="w-3 h-3 rounded-full bg-green-500"></div>
-        <span className="ml-4 text-[10px] text-gray-500 font-sans tracking-widest uppercase">developer.js</span>
-      </div>
-      
-      {/* Code Area */}
-      <div className="p-6 md:p-8 flex-grow flex flex-col gap-3 overflow-hidden z-10 relative">
-        {codeLines.map((line, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, x: -10 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 + (i * 0.1), duration: 0.5 }}
-            className={`${line.color} flex`}
-          >
-            <span className="text-gray-600 mr-4 select-none font-sans">{i + 1}</span>
-            <span className="whitespace-pre flex-wrap">{line.text}</span>
-          </motion.div>
-        ))}
-        {/* Blinking Cursor */}
-        <motion.div
-          animate={{ opacity: [1, 0, 1] }}
-          transition={{ repeat: Infinity, duration: 0.8 }}
-          className="mt-1 ml-8 w-2 h-4 bg-[#C9A96E]"
-        ></motion.div>
+      <div className="flex items-center gap-2 px-5 py-3 bg-[#161b22] border-b border-white/5 shrink-0">
+        <div className="w-3 h-3 rounded-full bg-[#ff5f57] shadow-[0_0_6px_#ff5f57aa]"></div>
+        <div className="w-3 h-3 rounded-full bg-[#febc2e] shadow-[0_0_6px_#febc2eaa]"></div>
+        <div className="w-3 h-3 rounded-full bg-[#28c840] shadow-[0_0_6px_#28c840aa]"></div>
+        <div className="ml-auto flex items-center gap-2">
+          <span className="text-[10px] text-gray-500 tracking-widest">developer.js</span>
+          <span className="text-[9px] bg-[#C9A96E]/20 text-[#C9A96E] px-2 py-0.5 rounded-full font-sans tracking-wider">JS</span>
+        </div>
       </div>
 
-      {/* Subtle Glow inside terminal */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] pointer-events-none rounded-full group-hover:bg-blue-500/20 transition-all duration-700"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#C9A96E]/10 blur-[100px] pointer-events-none rounded-full group-hover:bg-[#C9A96E]/20 transition-all duration-700"></div>
+      {/* Editor body */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* Line numbers gutter */}
+        <div className="flex flex-col py-5 px-3 bg-[#0d1117] border-r border-white/5 shrink-0 select-none">
+          {codeLines.map((_, i) => (
+            <div
+              key={i}
+              className={`leading-6 text-right text-[11px] transition-colors duration-200 ${
+                i < visibleLines
+                  ? activeLine === i
+                    ? "text-[#C9A96E]"
+                    : "text-gray-600"
+                  : "text-transparent"
+              }`}
+            >
+              {i + 1}
+            </div>
+          ))}
+        </div>
+
+        {/* Code content */}
+        <div className="flex flex-col py-5 px-4 flex-1 overflow-hidden relative">
+          {codeLines.map((tokens, i) => (
+            <div
+              key={i}
+              className={`leading-6 flex flex-wrap items-center rounded transition-all duration-300 ${
+                activeLine === i && i < visibleLines
+                  ? "bg-white/5"
+                  : ""
+              }`}
+            >
+              {i < visibleLines &&
+                tokens.map((t, j) => (
+                  <motion.span
+                    key={j}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.15 }}
+                    className={t.cls}
+                  >
+                    {t.text}
+                  </motion.span>
+                ))}
+              {i === visibleLines && (
+                <motion.span
+                  animate={{ opacity: [1, 0, 1] }}
+                  transition={{ repeat: Infinity, duration: 0.7 }}
+                  className="inline-block w-[7px] h-[14px] bg-[#C9A96E] ml-0.5 rounded-sm"
+                />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom status bar */}
+      <div className="flex items-center justify-between px-4 py-2 bg-[#C9A96E]/90 text-[#0d1117] text-[10px] font-sans font-bold tracking-wider shrink-0">
+        <span>⚡ JavaScript</span>
+        <span className="flex items-center gap-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#0d1117] animate-pulse"></span>
+          Open to Hire
+        </span>
+        <span>UTF-8</span>
+      </div>
+
+      {/* Glow effects */}
+      <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/10 blur-[80px] pointer-events-none rounded-full group-hover:bg-blue-500/20 transition-all duration-700"></div>
+      <div className="absolute bottom-8 left-0 w-48 h-48 bg-[#C9A96E]/10 blur-[80px] pointer-events-none rounded-full group-hover:bg-[#C9A96E]/15 transition-all duration-700"></div>
     </div>
   );
 };
@@ -117,7 +230,7 @@ const About = () => {
             • About Me
           </h2>
           <h3 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-tighter leading-[1.1]">
-            Driven by <span className="italic text-gray-500">Logic.</span> <br /> Designed for <span className="text-[#C9A96E]">Impact.</span>
+            Who Am <span className="italic text-gray-500">I?</span> <br /> What Do I <span className="text-[#C9A96E]">Do?</span>
           </h3>
         </motion.div>
 
@@ -162,7 +275,7 @@ const About = () => {
             className="lg:col-span-7"
           >
             <h3 className="text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight font-serif tracking-tight text-gray-900 dark:text-white">
-              Crafting <span className="text-[#C9A96E] italic">digital</span> experiences that feel effortless.
+              I Build Fast, Modern <span className="text-[#C9A96E] italic">Websites</span> & Web Apps.
             </h3>
 
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base md:text-lg mb-8 max-w-xl">
@@ -183,14 +296,24 @@ const About = () => {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-8 items-center">
+            <div className="flex flex-wrap gap-6 items-center">
               <MagneticButton>
                 <a
                   href={cvFile}
                   download="MD_AL_RAKEB_RASEL_BOSHUNIA_CV.pdf"
-                  className="px-12 py-5 bg-[#C9A96E] text-black font-bold rounded-full hover:shadow-[0_20px_40px_rgba(201,169,110,0.3)] transition-all tracking-wider"
+                  className="px-10 py-5 bg-[#C9A96E] text-black font-bold rounded-full hover:shadow-[0_20px_40px_rgba(201,169,110,0.3)] transition-all tracking-wider"
                 >
                   DOWNLOAD RESUME
+                </a>
+              </MagneticButton>
+
+              <MagneticButton>
+                <a
+                  href="mailto:official.alrakib@gmail.com"
+                  className="group px-10 py-5 border-2 border-[#C9A96E] text-[#C9A96E] font-bold rounded-full hover:bg-[#C9A96E] hover:text-black transition-all tracking-wider flex items-center gap-3 shadow-[0_0_20px_rgba(201,169,110,0.15)] hover:shadow-[0_0_35px_rgba(201,169,110,0.35)]"
+                >
+                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                  HIRE ME
                 </a>
               </MagneticButton>
 

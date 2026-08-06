@@ -41,7 +41,7 @@ const WorkingProcess = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-[#C9A96E] font-serif mb-6 tracking-[0.4em] text-xs uppercase font-bold"
           >
-            • The Methodology
+            • How I Work
           </motion.h3>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ const WorkingProcess = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-serif tracking-tighter"
           >
-            How I Bring Your <br /> <span className="text-[#C9A96E]">Vision to Life.</span>
+            My Step-by-Step <br /> <span className="text-[#C9A96E]">Work Process.</span>
           </motion.h2>
         </div>
 

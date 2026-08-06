@@ -40,13 +40,13 @@ const Hero = () => {
               </motion.div>
 
               <span className="text-[#C9A96E] font-serif tracking-[0.4em] text-xs md:text-sm uppercase mb-4 md:mb-6 block font-bold shadow-black drop-shadow-md">
-                • Specialized in Full Stack Excellence
+                • Full Stack Web Developer
               </span>
 
               <h1 className="text-5xl md:text-6xl lg:text-[7rem] font-serif leading-[0.9] tracking-tighter mb-6 md:mb-8 drop-shadow-2xl mix-blend-lighten text-white">
-                Architecting <br />
-                <span className="text-[#C9A96E]">Digital</span> <br />
-                Excellence.
+                I Build <br />
+                <span className="text-[#C9A96E]">Websites</span> &<br />
+                Web Apps.
               </h1>
 
               <p className="text-gray-300 text-base md:text-xl max-w-xl mb-8 md:mb-12 drop-shadow-lg font-medium">
@@ -64,6 +64,16 @@ const Hero = () => {
                   >
                     <span>GET RESUME</span>
                     <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </MagneticButton>
+
+                <MagneticButton>
+                  <a
+                    href="mailto:official.alrakib@gmail.com"
+                    className="group relative px-8 py-4 border-2 border-[#C9A96E] text-[#C9A96E] font-bold rounded-full transition-all hover:bg-[#C9A96E] hover:text-black flex items-center gap-3 shadow-[0_0_25px_rgba(201,169,110,0.2)] hover:shadow-[0_0_40px_rgba(201,169,110,0.4)]"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    <span>HIRE ME</span>
                   </a>
                 </MagneticButton>
 

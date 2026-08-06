@@ -1,8 +1,162 @@
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import SEOHelmet from "../components/common/SEOHelmet";
-import mypic from "../assets/boshunia-about.jpg";
 import { Link } from "react-router-dom";
 import { ArrowRight, Code2, LayoutTemplate, Zap, ShieldCheck } from "lucide-react";
+
+const CodeTerminal = () => {
+  const [visibleLines, setVisibleLines] = useState(0);
+  const [activeLine, setActiveLine] = useState(0);
+  const intervalRef = useRef(null);
+
+  const codeLines = [
+    [
+      { text: "const ", cls: "text-blue-400 font-bold" },
+      { text: "developer", cls: "text-white" },
+      { text: " = {", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  name", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "'Md. Al Rakeb Rasel Boshunia'", cls: "text-[#9ecbff]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  role", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "'Full Stack Developer'", cls: "text-[#9ecbff]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  location", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "'Bangladesh 🇧🇩'", cls: "text-[#9ecbff]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  skills", cls: "text-[#79b8ff]" },
+      { text: ": [", cls: "text-gray-400" },
+      { text: "'React'", cls: "text-[#f97583]" },
+      { text: ", ", cls: "text-gray-400" },
+      { text: "'Next.js'", cls: "text-[#f97583]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "           ", cls: "" },
+      { text: "'Node.js'", cls: "text-[#f97583]" },
+      { text: ", ", cls: "text-gray-400" },
+      { text: "'MongoDB'", cls: "text-[#f97583]" },
+      { text: "],", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  open", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "true", cls: "text-[#79b8ff] font-bold" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "};", cls: "text-gray-400" },
+    ],
+    [],
+    [
+      { text: "developer", cls: "text-white" },
+      { text: ".", cls: "text-gray-400" },
+      { text: "buildSomethingGreat", cls: "text-[#b392f0]" },
+      { text: "();", cls: "text-gray-400" },
+    ],
+  ];
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setVisibleLines((prev) => {
+        if (prev < codeLines.length) {
+          setActiveLine(prev);
+          return prev + 1;
+        } else {
+          clearInterval(intervalRef.current);
+          return prev;
+        }
+      });
+    }, 220);
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  return (
+    <div className="relative w-full aspect-[4/5] rounded-[2rem] bg-[#0d1117] border border-white/10 shadow-2xl overflow-hidden flex flex-col font-mono text-xs md:text-sm group hover:border-[#C9A96E]/40 transition-all duration-700">
+      {/* Mac window header */}
+      <div className="flex items-center gap-2 px-5 py-3 bg-[#161b22] border-b border-white/5 shrink-0">
+        <div className="w-3 h-3 rounded-full bg-[#ff5f57] shadow-[0_0_6px_#ff5f57aa]"></div>
+        <div className="w-3 h-3 rounded-full bg-[#febc2e] shadow-[0_0_6px_#febc2eaa]"></div>
+        <div className="w-3 h-3 rounded-full bg-[#28c840] shadow-[0_0_6px_#28c840aa]"></div>
+        <div className="ml-auto flex items-center gap-2">
+          <span className="text-[10px] text-gray-500 tracking-widest">developer.js</span>
+          <span className="text-[9px] bg-[#C9A96E]/20 text-[#C9A96E] px-2 py-0.5 rounded-full font-sans tracking-wider">JS</span>
+        </div>
+      </div>
+      {/* Editor body */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* Line numbers gutter */}
+        <div className="flex flex-col py-5 px-3 bg-[#0d1117] border-r border-white/5 shrink-0 select-none">
+          {codeLines.map((_, i) => (
+            <div
+              key={i}
+              className={`leading-6 text-right text-[11px] transition-colors duration-200 ${
+                i < visibleLines
+                  ? activeLine === i ? "text-[#C9A96E]" : "text-gray-600"
+                  : "text-transparent"
+              }`}
+            >
+              {i + 1}
+            </div>
+          ))}
+        </div>
+        {/* Code content */}
+        <div className="flex flex-col py-5 px-4 flex-1 overflow-hidden relative">
+          {codeLines.map((tokens, i) => (
+            <div
+              key={i}
+              className={`leading-6 flex flex-wrap items-center rounded transition-all duration-300 ${
+                activeLine === i && i < visibleLines ? "bg-white/5" : ""
+              }`}
+            >
+              {i < visibleLines &&
+                tokens.map((t, j) => (
+                  <motion.span
+                    key={j}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.15 }}
+                    className={t.cls}
+                  >
+                    {t.text}
+                  </motion.span>
+                ))}
+              {i === visibleLines && (
+                <motion.span
+                  animate={{ opacity: [1, 0, 1] }}
+                  transition={{ repeat: Infinity, duration: 0.7 }}
+                  className="inline-block w-[7px] h-[14px] bg-[#C9A96E] ml-0.5 rounded-sm"
+                />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* Bottom status bar */}
+      <div className="flex items-center justify-between px-4 py-2 bg-[#C9A96E]/90 text-[#0d1117] text-[10px] font-sans font-bold tracking-wider shrink-0">
+        <span>⚡ JavaScript</span>
+        <span className="flex items-center gap-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#0d1117] animate-pulse"></span>
+          Open to Hire
+        </span>
+        <span>UTF-8</span>
+      </div>
+      {/* Glow effects */}
+      <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/10 blur-[80px] pointer-events-none rounded-full group-hover:bg-blue-500/20 transition-all duration-700"></div>
+      <div className="absolute bottom-8 left-0 w-48 h-48 bg-[#C9A96E]/10 blur-[80px] pointer-events-none rounded-full group-hover:bg-[#C9A96E]/15 transition-all duration-700"></div>
+    </div>
+  );
+};
 
 const AboutPage = () => {
   return (
@@ -23,10 +177,10 @@ const AboutPage = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-[#C9A96E] font-serif tracking-[0.4em] text-xs uppercase mb-6 block font-bold">
-              • The Complete Story •
+              • My Story
             </h2>
             <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-serif tracking-tighter leading-none text-gray-900 dark:text-white mb-6">
-              Engineering <span className="text-[#C9A96E] italic">Vision.</span>
+              Who I <span className="text-[#C9A96E] italic">Am.</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-medium">
               From creative design to complex frontend architecture, here is the A-Z of my journey, philosophy, and dedication to the craft.
@@ -44,19 +198,7 @@ const AboutPage = () => {
             transition={{ duration: 0.8 }}
             className="lg:col-span-5 space-y-8 lg:sticky lg:top-32 relative"
           >
-            <div className="relative w-full aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 group">
-              <img
-                src={mypic}
-                alt="MD. AL RAKEB RASEL BOSHUNIA"
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
-              
-              <div className="absolute bottom-8 left-8 right-8">
-                <h3 className="text-white text-2xl font-serif mb-1">Al-Rakeb Boshunia</h3>
-                <p className="text-[#C9A96E] text-xs font-bold tracking-[0.2em] uppercase">Frontend Architect</p>
-              </div>
-            </div>
+            <CodeTerminal />
 
             {/* Floating Experience Badge */}
             <motion.div
@@ -101,19 +243,19 @@ const AboutPage = () => {
           >
             <div className="bg-white dark:bg-[#111] p-10 md:p-14 rounded-[3rem] shadow-sm border border-gray-200 dark:border-white/5">
               
-              <h3 className="text-3xl font-serif text-gray-900 dark:text-white mb-6">The Genesis</h3>
+              <h3 className="text-3xl font-serif text-gray-900 dark:text-white mb-6">How I Got Started</h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8 text-lg font-light">
                 My journey into the world of digital engineering didn't begin with just writing lines of code; it started with a profound fascination for design and user experience. During my early years as a Print-on-Demand designer, I learned how visual aesthetics directly influence human emotion and conversion. I realized that a beautiful design is only as powerful as the infrastructure supporting it.
               </p>
 
-              <h3 className="text-3xl font-serif text-gray-900 dark:text-white mb-6 mt-12">Evolution into Engineering</h3>
+              <h3 className="text-3xl font-serif text-gray-900 dark:text-white mb-6 mt-12">How I Became a Developer</h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8 text-lg font-light">
                 Driven by the desire to bring my designs to life, I transitioned into software engineering. Pursuing a B.Sc in Computer Science provided me with the foundational knowledge of data structures, algorithms, and system design. But it was my hands-on experience with modern JavaScript frameworks that truly unlocked my potential. 
                 <br/><br/>
                 I mastered <strong>React, Next.js, and Redux</strong> to build lightning-fast, scalable frontend architectures. By bridging the gap between high-end design and robust backend logic (Node.js, Express, MongoDB), I evolved from a designer into a Full-Stack Frontend Architect.
               </p>
 
-              <h3 className="text-3xl font-serif text-gray-900 dark:text-white mb-6 mt-12">My Professional Philosophy</h3>
+              <h3 className="text-3xl font-serif text-gray-900 dark:text-white mb-6 mt-12">How I Approach My Work</h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8 text-lg font-light">
                 I believe that enterprise software shouldn't feel heavy or clunky. The modern user demands applications that are as beautiful as they are functional. My philosophy is built on three pillars:
               </p>
@@ -129,7 +271,7 @@ const AboutPage = () => {
                 </div>
               </div>
 
-              <h3 className="text-3xl font-serif text-gray-900 dark:text-white mb-6 mt-12">The Present & Future</h3>
+              <h3 className="text-3xl font-serif text-gray-900 dark:text-white mb-6 mt-12">Where I Am Today</h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-10 text-lg font-light">
                 Today, as a Frontend Developer at Fire AI - Betopia Group, I am responsible for architecting SaaS platforms, interactive e-commerce sites, and highly secure corporate portals. I am continuously exploring the bleeding edge of web technologies, including AI integrations and advanced WebGL rendering, to push the boundaries of what is possible in a browser.
               </p>

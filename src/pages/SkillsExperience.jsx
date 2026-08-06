@@ -1,5 +1,7 @@
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import SEOHelmet from "../components/common/SEOHelmet";
 
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaWordpress, FaElementor } from "react-icons/fa";
@@ -178,6 +180,47 @@ const SkillsExperience = () => {
             </motion.div>
           </div>
         </div>
+        {/* HIRE ME CTA Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-24 relative rounded-[3rem] overflow-hidden bg-[#0d1117] border border-[#C9A96E]/20 p-12 md:p-16 text-center"
+        >
+          {/* Glow bg */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#C9A96E]/10 via-transparent to-transparent pointer-events-none"></div>
+          <div className="absolute w-[400px] h-[400px] bg-[#C9A96E]/10 blur-[120px] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+
+          <div className="relative z-10">
+            <p className="text-[#C9A96E] font-serif tracking-[0.4em] text-xs uppercase mb-4 font-bold">
+              • Open to Opportunities
+            </p>
+            <h3 className="text-4xl md:text-6xl font-serif tracking-tighter text-white mb-6 leading-tight">
+              Ready to build something <br />
+              <span className="text-[#C9A96E] italic">great together?</span>
+            </h3>
+            <p className="text-gray-400 max-w-xl mx-auto mb-10 text-base leading-relaxed">
+              I'm currently open for full-time roles, freelance contracts, and exciting collaborations. Let's make it happen.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <a
+                href="mailto:official.alrakib@gmail.com"
+                className="group flex items-center gap-3 px-12 py-5 bg-[#C9A96E] text-black font-bold rounded-full hover:shadow-[0_20px_50px_rgba(201,169,110,0.4)] transition-all hover:scale-105 tracking-wider"
+              >
+                <span className="w-2 h-2 rounded-full bg-black animate-pulse"></span>
+                HIRE ME NOW
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              <Link
+                to="/contact"
+                className="flex items-center gap-3 px-10 py-5 border border-white/20 text-white font-bold rounded-full hover:border-[#C9A96E] hover:text-[#C9A96E] transition-all tracking-wider text-sm"
+              >
+                Get In Touch
+              </Link>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

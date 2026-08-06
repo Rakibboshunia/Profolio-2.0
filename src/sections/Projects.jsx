@@ -37,10 +37,10 @@ const Projects = () => {
         >
           <div className="max-w-2xl">
             <h2 className="text-[#C9A96E] font-serif tracking-[0.4em] text-xs uppercase mb-6 block font-bold">
-              • Technical Portfolio
+              • My Projects
             </h2>
             <h3 className="text-5xl md:text-7xl font-serif leading-none tracking-tighter">
-              Enterprise <br /> <span className="text-[#C9A96E]">Solutions.</span>
+              Things I've <br /> <span className="text-[#C9A96E]">Built.</span>
             </h3>
           </div>
 
