@@ -77,12 +77,6 @@ const Hero = () => {
                   </a>
                 </MagneticButton>
 
-                <button className="flex items-center gap-4 text-sm font-bold tracking-widest uppercase hover:text-[#C9A96E] transition-colors group text-white">
-                  <div className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:border-[#C9A96E] transition-colors bg-black/20 backdrop-blur-sm">
-                    <Play size={14} fill="currentColor" />
-                  </div>
-                  View Showreel
-                </button>
               </div>
             </div>
           </div>

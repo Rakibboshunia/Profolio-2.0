@@ -28,25 +28,64 @@ const CodeTerminal = () => {
       { text: ",", cls: "text-gray-400" },
     ],
     [
-      { text: "  location", cls: "text-[#79b8ff]" },
+      { text: "  languages", cls: "text-[#79b8ff]" },
       { text: ": ", cls: "text-gray-400" },
-      { text: "'Bangladesh 🇧🇩'", cls: "text-[#9ecbff]" },
+      { text: "['C', 'C++', 'JavaScript', 'TypeScript']", cls: "text-[#f97583]" },
       { text: ",", cls: "text-gray-400" },
     ],
     [
-      { text: "  skills", cls: "text-[#79b8ff]" },
-      { text: ": [", cls: "text-gray-400" },
-      { text: "'React'", cls: "text-[#f97583]" },
-      { text: ", ", cls: "text-gray-400" },
-      { text: "'Next.js'", cls: "text-[#f97583]" },
+      { text: "  frontend", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "['React.js', 'Next.js', 'Tailwind', 'Bootstrap']", cls: "text-[#f97583]" },
       { text: ",", cls: "text-gray-400" },
     ],
     [
-      { text: "           ", cls: "" },
-      { text: "'Node.js'", cls: "text-[#f97583]" },
-      { text: ", ", cls: "text-gray-400" },
-      { text: "'MongoDB'", cls: "text-[#f97583]" },
-      { text: "],", cls: "text-gray-400" },
+      { text: "  reactEco", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "['Hooks', 'Context API', 'TanStack']", cls: "text-[#f97583]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  backend", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "['Node.js', 'Express.js', 'REST API', 'JWT']", cls: "text-[#f97583]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  databases", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "['MongoDB', 'MySQL', 'Prisma']", cls: "text-[#f97583]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  api", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "['Axios', 'Fetch API', 'JSON Handling']", cls: "text-[#f97583]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  devTools", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "['Git', 'GitHub', 'VS Code', 'NPM', 'Postman', 'Vercel', 'Figma']", cls: "text-[#f97583]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  aiTools", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "['Cursor AI', 'Claude Code', 'ChatGPT', 'Antigravity', 'GitHub Copilot', 'DeepSeek', 'Grok']", cls: "text-[#f97583]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  experience", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "'1.5+ Years'", cls: "text-[#9ecbff]" },
+      { text: ",", cls: "text-gray-400" },
+    ],
+    [
+      { text: "  education", cls: "text-[#79b8ff]" },
+      { text: ": ", cls: "text-gray-400" },
+      { text: "'B.Sc in CSE'", cls: "text-[#9ecbff]" },
+      { text: ",", cls: "text-gray-400" },
     ],
     [
       { text: "  open", cls: "text-[#79b8ff]" },
@@ -82,7 +121,7 @@ const CodeTerminal = () => {
   }, []);
 
   return (
-    <div className="relative w-full aspect-[4/5] rounded-[2rem] bg-[#0d1117] border border-white/10 shadow-2xl overflow-hidden flex flex-col font-mono text-xs md:text-sm group hover:border-[#C9A96E]/40 transition-all duration-700">
+    <div className="relative w-full min-h-[500px] h-auto lg:h-[650px] rounded-[2rem] bg-[#0d1117] border border-white/10 shadow-2xl overflow-hidden flex flex-col font-mono text-xs md:text-sm group hover:border-[#C9A96E]/40 transition-all duration-700">
       {/* Mac window header */}
       <div className="flex items-center gap-2 px-5 py-3 bg-[#161b22] border-b border-white/5 shrink-0">
         <div className="w-3 h-3 rounded-full bg-[#ff5f57] shadow-[0_0_6px_#ff5f57aa]"></div>
