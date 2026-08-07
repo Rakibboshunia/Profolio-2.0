@@ -39,12 +39,6 @@ const experiences = [
     desc: "Developing and maintaining custom WordPress sites, designing high-converting Elementor pages, and optimizing performance for business platforms and agency websites.",
   },
   {
-    role: "Full Stack & CMS Developer",
-    company: "Freelance | Remote",
-    year: "2025 – Present",
-    desc: "Building custom business websites, eCommerce stores, and SaaS platforms using MERN stack, WordPress, and Shopify tailored to business needs.",
-  },
-  {
     role: "MERN Stack Intern",
     company: "Ostad | Remote",
     year: "February 2024 - August 2025",
