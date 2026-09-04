@@ -77,6 +77,22 @@ const faqs = [
     q: "Will my WordPress/Shopify site be fast and SEO optimized?",
     a: "Yes! I optimize every site for speed using caching plugins, CDN setup, image compression, and clean code. SEO best practices like proper meta tags, schema markup, and sitemap setup are always included. 📈",
   },
+  {
+    q: "Can you set up Shopify from scratch?",
+    a: "Yes! I handle complete Shopify store setup — from domain connection, theme installation & customization, product listing, payment & shipping setup, to launching a fully functional store ready for sales. 🚀",
+  },
+  {
+    q: "Do you work with Shopify apps and integrations?",
+    a: "Absolutely! I integrate Shopify apps for reviews, email marketing, upselling, loyalty programs, and more. I also handle custom integrations using Shopify's API for unique business needs. 🔗",
+  },
+  {
+    q: "Can you customize Shopify sections and themes?",
+    a: "Yes! I customize Shopify themes using Liquid templating — modifying sections, blocks, and layouts to give your store a unique look that matches your brand identity perfectly. 🎨",
+  },
+  {
+    q: "Can you fix bugs in my WordPress or Shopify site?",
+    a: "Yes! I diagnose and fix layout issues, plugin conflicts, broken features, and performance problems in both WordPress and Shopify sites — usually within 24–48 hours. 🛠️",
+  },
 
   // ── Fullstack / Backend ──
   {

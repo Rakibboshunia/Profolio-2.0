@@ -24,21 +24,15 @@ const mernSkills = [
 const experiences = [
   {
     role: "Frontend Developer",
-    company: "Fire AI | Rampura, Dhaka, Bangladesh",
+    company: "Fire AI | Dhaka, Bangladesh",
     year: "October 2025 – Present",
     desc: "• Develop responsive web applications using React.js, Next.js, TypeScript, and Tailwind CSS.\n• Build reusable UI components and integrate RESTful APIs for dynamic user experiences.",
   },
   {
     role: "CMS (WordPress & Shopify) Developer",
-    company: "Join Venture AI | Remote",
+    company: "JVAI | Dhaka, Bangladesh",
     year: "November 2025 – Present",
     desc: "• Develop responsive WordPress & Shopify websites with customized themes and e-commerce features.\n• Customize WooCommerce/Shopify stores, integrate required functionality, and optimize user experience.",
-  },
-  {
-    role: "Freelancing Web Developer",
-    company: "Freelance | Remote",
-    year: "2023 – Present",
-    desc: "• Providing specialized freelance web development services focused entirely on WordPress and Shopify platforms.\n• Build, customize, and scale high-converting e-commerce stores using WooCommerce and Shopify.\n• Develop tailored themes, layouts, and custom functionalities to meet diverse international client requirements.\n• Manage end-to-end client communications to deliver highly responsive, user-friendly, and premium digital solutions.",
   },
   {
     role: "Graphic Designer For POD (print on demand) Store",
