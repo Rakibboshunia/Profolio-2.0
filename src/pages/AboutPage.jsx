@@ -133,7 +133,7 @@ const AboutPage = () => {
 
               <h3 className="text-3xl font-serif text-gray-900 dark:text-white mb-6 mt-12">The Present & Future</h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-10 text-lg font-light">
-                Today, as a Frontend Developer at Fire AI - Betopia Group, I am responsible for architecting SaaS platforms, interactive e-commerce sites, and highly secure corporate portals, while concurrently mastering backend technologies to become a complete Full Stack Engineer. I am continuously exploring the bleeding edge of web technologies, including AI integrations and advanced WebGL rendering, to push the boundaries of what is possible in a browser.
+                Today, as a Frontend Developer at Fire AI, I am responsible for architecting SaaS platforms, interactive e-commerce sites, and highly secure corporate portals, while concurrently mastering backend technologies to become a complete Full Stack Engineer. I am continuously exploring the bleeding edge of web technologies, including AI integrations and advanced WebGL rendering, to push the boundaries of what is possible in a browser.
               </p>
 
               <div className="flex flex-wrap gap-6 pt-6 border-t border-gray-200 dark:border-white/10">

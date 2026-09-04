@@ -23,16 +23,22 @@ const mernSkills = [
 
 const experiences = [
   {
-    role: "Front-end Developer",
-    company: "Fire AI | Dhaka, Bangladesh",
+    role: "Frontend Developer",
+    company: "Fire AI | Rampura, Dhaka, Bangladesh",
     year: "October 2025 – Present",
-    desc: "Developed scalable and responsive web applications using React.js and Next.js. Collaborated with cross-functional teams to deliver high-quality, user-focused digital solutions.",
+    desc: "• Develop responsive web applications using React.js, Next.js, TypeScript, and Tailwind CSS.\n• Build reusable UI components and integrate RESTful APIs for dynamic user experiences.",
   },
   {
-    role: "Front-end Developer",
-    company: "Freelance | Part-time",
-    year: "February 2025 – Present",
-    desc: "Developed responsive custom web applications using React.js and delivered high-converting e-commerce and agency platforms using Shopify and WordPress for real-world clients.",
+    role: "CMS (WordPress & Shopify) Developer",
+    company: "Join Venture AI | Remote",
+    year: "November 2025 – Present",
+    desc: "• Develop responsive WordPress & Shopify websites with customized themes and e-commerce features.\n• Customize WooCommerce/Shopify stores, integrate required functionality, and optimize user experience.",
+  },
+  {
+    role: "Freelancing Web Developer",
+    company: "Freelance | Remote",
+    year: "2023 – Present",
+    desc: "• Providing specialized freelance web development services focused entirely on WordPress and Shopify platforms.\n• Build, customize, and scale high-converting e-commerce stores using WooCommerce and Shopify.\n• Develop tailored themes, layouts, and custom functionalities to meet diverse international client requirements.\n• Manage end-to-end client communications to deliver highly responsive, user-friendly, and premium digital solutions.",
   },
   {
     role: "Graphic Designer For POD (print on demand) Store",
@@ -123,7 +129,7 @@ const SkillsExperience = () => {
                     <div className="text-[#C9A96E] text-xs font-bold tracking-[0.2em] uppercase mb-2">{exp.year}</div>
                     <h4 className="text-2xl text-gray-900 dark:text-white font-medium mb-1 tracking-tight">{exp.role}</h4>
                     <div className="text-gray-500 dark:text-gray-400 text-sm mb-4 font-medium">{exp.company}</div>
-                    <p className="text-gray-600 dark:text-gray-500 text-sm leading-relaxed max-w-md">{exp.desc}</p>
+                    <p className="text-gray-600 dark:text-gray-500 text-sm leading-relaxed max-w-md whitespace-pre-line">{exp.desc}</p>
                   </motion.div>
                 ))}
               </div>
