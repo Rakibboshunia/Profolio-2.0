@@ -36,7 +36,6 @@ export const nextResumeAi = {
     resumeSettings,
     resumeBilling,
   ],
-  githubLink: "https://github.com/Rakibboshunia/NextResume-AI",
   liveLink: "https://next-resume-ai-virid.vercel.app/",
   overview: "NextResume AI is a production-ready, AI-powered resume builder. It features a modern dark-themed UI, multi-step forms with real-time preview, and secure authentication. The platform is designed to provide a high-end executive experience for users creating professional resumes.",
   challenges: "Building a complex multi-step form with real-time preview while maintaining a responsive, visually premium dark theme. Integrating a PostgreSQL backend via Prisma and securing authentication with NextAuth.",

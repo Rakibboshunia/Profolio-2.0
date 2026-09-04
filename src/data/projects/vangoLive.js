@@ -10,7 +10,6 @@ export const vangoLive = {
   description: "A world-class premium landing page for a revolutionary live commerce platform built to empower people who sell live.",
   tags: ["#React", "#TailwindCSS", "#FramerMotion"],
   image: vangoImg,
-  githubLink: "https://github.com/Rakibboshunia/Vango_Live",
   liveLink: "https://ecommerce-bizsolutio-landingpage.vercel.app/",
   overview: "VANGO Live is a next-generation platform for live sellers. The landing page features premium neon gradients, rich modern typography, fluid interactive widgets, and seamless animations to capture waitlist signups.",
   challenges: "Achieving pixel-perfect responsiveness while placing dense interactive dashboard cards and mockups around the mobile asset without creating layout overflow.",

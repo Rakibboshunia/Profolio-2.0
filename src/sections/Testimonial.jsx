@@ -1,133 +1,123 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaQuoteRight, FaStar, FaChevronLeft, FaChevronRight, FaCheckCircle } from "react-icons/fa";
+import { FaQuoteLeft, FaStar, FaChevronLeft, FaChevronRight, FaCheckCircle } from "react-icons/fa";
 
-import img1 from "../assets/review/pic1.jpg";
-import img2 from "../assets/review/pic2.jpg";
-import img3 from "../assets/review/pic3.jpg";
-import img4 from "../assets/review/pic4.webp";
-import img5 from "../assets/review/pic1.jpg";
-import img6 from "../assets/review/pic6.png";
-import img7 from "../assets/review/pic7.png";
-import img8 from "../assets/review/pic8.png";
-import img9 from "../assets/review/pic9.png";
-import img10 from "../assets/review/pic10.png";
 
-// Bangladeshi Client Images
-import bdClient1 from "../assets/review/bd-client-1.png";
-import bdClient2 from "../assets/review/bd-client-2.png";
-import bdClient3 from "../assets/review/bd-client-3.png";
-import bdClient4 from "../assets/review/bd-client-4.png";
-import bdClient5 from "../assets/review/bd-client-5.png";
 
 const data = [
   {
-    name: "Johan Fleuren",
+    name: "Johan",
     role: "Founder, Fleuren Solutions",
     country: "Netherlands",
-    image: img1,
     text: "Good communication, delivering perfect with own ideas implement to make the project better! pleasure to work with the team.",
     project: "Frontend Project"
   },
   {
-    name: "Danparkbiz",
+    name: "Dan",
     role: "Managing Director, ParkBiz",
     country: "United Kingdom",
-    image: img2,
-    text: "A pleasure working with Rakibul. Communication was excellent and the project was completed on time and I was updated every step of the way. Will be using again in the future.",
+    text: "A pleasure working with Boshunia. Communication was excellent and the project was completed on time and I was updated every step of the way. Will be using again in the future.",
     project: "Web Development"
   },
   {
-    name: "Fahad",
+    name: "Liam",
     role: "CEO, TechNova",
-    country: "Bangladesh",
-    image: bdClient1,
-    text: "Great team, Amazing work. Highly recommend.",
-    project: "Web Development"
+    country: "Australia",
+    text: "Boshunia is a phenomenal Full Stack developer. He built our entire platform from scratch and it works flawlessly.",
+    project: "Full Stack Development"
   },
   {
-    name: "Rory Clerkin",
+    name: "Kevin",
     role: "Product Manager, NextGen Apps",
     country: "Ireland",
-    image: img4,
     text: "Great to work with this team. Excellent communication, very polite and dedicated to their client. Looking forward to the next project already!",
     project: "AI Mobile App & Website"
   },
   {
-    name: "Rory Clark",
+    name: "David",
     role: "Founder, Soundtrack My Night",
     country: "United States",
-    image: img5,
-    text: "Rakib delivered an incredible web application for Soundtrack My Night. His design aesthetics and frontend engineering skills are absolutely top-notch.",
+    text: "Boshunia delivered an incredible web application for Soundtrack My Night. His design aesthetics and frontend engineering skills are absolutely top-notch.",
     project: "Soundtrack My Night"
   },
   {
-    name: "Nguyen Thach",
+    name: "Nguyen",
     role: "Technical Lead, DevCorp",
     country: "Vietnam",
-    image: img6,
     text: "I'm happy with the result, i think it's exceed my expectation and will come back again if there's any other project.",
     project: "Frontend Project"
   },
   {
-    name: "Akilah Collins",
+    name: "Akilah",
     role: "Project Manager, Collins Agency",
     country: "United States",
-    image: img7,
     text: "Working with this development team has been such a positive experience! They are very talented, willing to jump on a Zoom call at any time to answer questions and walk through the details of the development phases, etc.",
     project: "Web Development"
   },
   {
-    name: "Rory C.",
+    name: "Rory",
     role: "Operations Director, InnovateTech",
     country: "Canada",
-    image: img8,
-    text: "Very impressed with Rakibul and his team. Extremely competent and understanding of the task at hand.",
+    text: "Very impressed with Boshunia and his team. Extremely competent and understanding of the task at hand.",
     project: "AI Mobile App & Website"
   },
   {
-    name: "Tanvir Ahmed",
+    name: "Omar",
     role: "Founder, TechNova BD",
-    country: "Bangladesh",
-    image: bdClient2,
-    text: "Rakib transformed our idea into a stunning digital product. His attention to detail and UI skills are exceptional.",
-    project: "E-Commerce Platform"
+    country: "United Arab Emirates",
+    text: "Boshunia transformed our idea into a stunning digital product. His frontend development skills and attention to detail are exceptional.",
+    project: "Frontend Development"
   },
   {
-    name: "Shariar Hossain",
+    name: "Wei",
     role: "Marketing Director, BrightAds",
-    country: "Bangladesh",
-    image: bdClient3,
-    text: "Working with Rakib was seamless. He delivered a clean, modern design that boosted our conversions significantly.",
-    project: "Marketing Dashboard"
+    country: "Singapore",
+    text: "Working with Boshunia was seamless. He delivered a clean, highly customized WordPress site that boosted our conversions significantly.",
+    project: "WordPress Development"
   },
   {
-    name: "Mahmud Hasan",
+    name: "Lukas",
     role: "Product Manager, DhakaLabs",
-    country: "Bangladesh",
-    image: bdClient4,
-    text: "Incredible communication and a true eye for modern design. The project was delivered ahead of schedule with flawless execution.",
-    project: "SaaS Application"
+    country: "Germany",
+    text: "Incredible communication and a true eye for modern frontend architecture. The React application was delivered ahead of schedule.",
+    project: "Frontend Project"
   },
   {
-    name: "Zayed Khan",
+    name: "Erik",
     role: "CEO, NextGen BD",
-    country: "Bangladesh",
-    image: bdClient5,
-    text: "Working with Rakib has been an absolute game-changer for our business. The web app is robust, incredibly fast, and looks stunning.",
-    project: "Enterprise Web App"
+    country: "Sweden",
+    text: "Working with Boshunia has been a game-changer. The custom WordPress theme he developed is robust, fast, and easy to manage.",
+    project: "Custom WordPress"
   }
 ];
+
+const cardVariants = {
+  enter: (direction) => ({
+    x: direction > 0 ? 120 : -120,
+    opacity: 0,
+    scale: 0.97,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+  },
+  exit: (direction) => ({
+    x: direction < 0 ? -120 : 120,
+    opacity: 0,
+    scale: 0.97,
+  }),
+};
 
 const Testimonial = () => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  // Auto slide
   useEffect(() => {
     const i = setInterval(() => {
-      nextStep();
-    }, 8000);
+      setDirection(1);
+      setIndex((prev) => (prev + 1) % data.length);
+    }, 7000);
     return () => clearInterval(i);
   }, [index]);
 
@@ -141,24 +131,9 @@ const Testimonial = () => {
     setIndex((prev) => (prev - 1 + data.length) % data.length);
   };
 
-  const variants = {
-    enter: (direction) => ({
-      x: direction > 0 ? 100 : -100,
-      opacity: 0,
-      filter: "blur(10px)",
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-      filter: "blur(0px)",
-    },
-    exit: (direction) => ({
-      zIndex: 0,
-      x: direction < 0 ? 100 : -100,
-      opacity: 0,
-      filter: "blur(10px)",
-    }),
+  const goTo = (i) => {
+    setDirection(i > index ? 1 : -1);
+    setIndex(i);
   };
 
   return (
@@ -166,138 +141,125 @@ const Testimonial = () => {
       id="testimonials"
       className="relative pt-10 md:pt-14 pb-16 md:pb-24 px-6 bg-white dark:bg-[#080808] overflow-hidden transition-colors duration-500"
     >
-      {/* Background Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
-        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-[#C9A96E]/5 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-[#C9A96E]/5 blur-[120px] rounded-full"></div>
-      </div>
+      {/* Background glow */}
+      <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-[#C9A96E]/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-[#C9A96E]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
 
-          {/* Left Side: Content */}
-          <div className="order-2 lg:order-1">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-[#C9A96E] font-serif tracking-[0.4em] text-xs uppercase mb-8 block font-bold">
-                • Client Testimonials
-              </h2>
-              <h3 className="text-5xl md:text-7xl font-serif tracking-tighter leading-[0.9] mb-12">
-                What Industry <br />
-                <span className="text-[#C9A96E]">Leaders Say.</span>
-              </h3>
-            </motion.div>
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-14"
+        >
+          <h2 className="text-[#C9A96E] font-serif tracking-[0.4em] text-xs uppercase mb-4 block font-bold">
+            • Client Reviews
+          </h2>
+          <h3 className="text-4xl md:text-6xl font-serif tracking-tighter leading-tight">
+            What My Clients <br />
+            <span className="text-[#C9A96E]">Say About Me.</span>
+          </h3>
+        </motion.div>
 
-            <div className="relative min-h-[300px]">
-              <AnimatePresence initial={false} custom={direction} mode="wait">
-                <motion.div
-                  key={index}
-                  custom={direction}
-                  variants={variants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="space-y-8"
-                >
-                  <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <FaStar key={i} className="text-[#C9A96E] text-sm" />
-                    ))}
-                  </div>
-
-                  <p className="text-2xl md:text-4xl font-serif italic text-gray-900 dark:text-gray-100 leading-tight">
-                    "{data[index].text}"
-                  </p>
-
-                  <div className="pt-8 flex items-center gap-6">
-                    <div className="relative">
-                      <img
-                        src={data[index].image}
-                        alt={data[index].name}
-                        className="w-16 h-16 rounded-full object-cover grayscale brightness-110"
-                      />
-                      <div className="absolute -bottom-1 -right-1 bg-[#C9A96E] text-black rounded-full p-1 border-2 border-white dark:border-[#080808]">
-                        <FaCheckCircle size={10} />
-                      </div>
+        {/* Carousel Card */}
+        <div className="relative overflow-hidden px-2 py-4">
+          <div className="flex gap-6 w-full">
+            <AnimatePresence initial={false} custom={direction} mode="popLayout">
+              {[0, 1, 2, 3].map((offset) => {
+                const itemIndex = (index + offset) % data.length;
+                const item = data[itemIndex];
+                
+                return (
+                  <motion.div
+                    key={itemIndex}
+                    custom={direction}
+                    variants={cardVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    layout
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] shrink-0 bg-gray-50 dark:bg-[#111] border border-gray-100 dark:border-white/5 rounded-3xl p-6 shadow-sm relative flex flex-col justify-between h-auto group hover:border-[#C9A96E]/50 transition-colors"
+                  >
+                    
+                    {/* Decorative quote icon */}
+                    <div className="absolute top-4 right-6 text-[#C9A96E]/5 text-6xl pointer-events-none select-none transition-transform group-hover:scale-110">
+                      <FaQuoteLeft />
                     </div>
+
                     <div>
-                      <h4 className="text-xl font-bold text-gray-900 dark:text-white uppercase tracking-wider">{data[index].name}</h4>
-                      <div className="flex items-center gap-2 mt-1">
-                        <p className="text-[#C9A96E] text-[10px] font-bold tracking-[0.2em] uppercase">
-                          {data[index].role}
-                        </p>
-                        <span className="text-gray-400 dark:text-gray-600 text-[10px]">•</span>
-                        <p className="text-gray-500 dark:text-gray-400 text-[10px] font-bold tracking-widest uppercase">
-                          {data[index].country}
+                      {/* Stars */}
+                      <div className="flex gap-1 mb-4">
+                        {[...Array(5)].map((_, i) => (
+                          <FaStar key={i} className="text-[#C9A96E] text-xs" />
+                        ))}
+                      </div>
+
+                      {/* Review text */}
+                      <p className="text-sm font-serif italic text-gray-800 dark:text-gray-100 leading-relaxed mb-6 relative z-10">
+                        "{item.text.length > 130 ? item.text.substring(0, 130) + '...' : item.text}"
+                      </p>
+                    </div>
+
+                    {/* Client info row */}
+                    <div className="pt-4 border-t border-gray-200 dark:border-white/10 mt-auto">
+                      <h4 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2 mb-1">
+                        {item.name}
+                        <FaCheckCircle className="text-[#C9A96E] text-xs" />
+                      </h4>
+                      <div className="flex items-center mt-1">
+                        <p className="text-gray-400 text-[9px] font-bold tracking-widest uppercase">
+                          {item.country}
                         </p>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
+        </div>
 
-            {/* Navigation Buttons */}
-            <div className="flex gap-4 mt-16">
-              <button
-                onClick={prevStep}
-                className="w-14 h-14 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-400 hover:text-[#C9A96E] hover:border-[#C9A96E] transition-all duration-300 group"
-              >
-                <FaChevronLeft className="group-hover:-translate-x-1 transition-transform" />
-              </button>
-              <button
-                onClick={nextStep}
-                className="w-14 h-14 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-400 hover:text-[#C9A96E] hover:border-[#C9A96E] transition-all duration-300 group"
-              >
-                <FaChevronRight className="group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
+        {/* Navigation Row */}
+        <div className="flex items-center justify-between mt-8 gap-4 px-4">
+
+          {/* Prev / Next arrows */}
+          <div className="flex gap-3 shrink-0">
+            <button
+              onClick={prevStep}
+              className="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-400 hover:text-[#C9A96E] hover:border-[#C9A96E] transition-all duration-300 group"
+            >
+              <FaChevronLeft className="group-hover:-translate-x-0.5 transition-transform" />
+            </button>
+            <button
+              onClick={nextStep}
+              className="w-12 h-12 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-400 hover:text-[#C9A96E] hover:border-[#C9A96E] transition-all duration-300 group"
+            >
+              <FaChevronRight className="group-hover:translate-x-0.5 transition-transform" />
+            </button>
           </div>
 
-          {/* Right Side: Visual Element */}
-          <div className="order-1 lg:order-2 relative">
-            <div className="relative aspect-square max-w-[500px] mx-auto">
-              {/* Decorative rings */}
-              <div className="absolute inset-0 rounded-full border border-[#C9A96E]/20 animate-[spin_20s_linear_infinite]"></div>
-              <div className="absolute inset-4 rounded-full border border-[#C9A96E]/10 animate-[spin_15s_linear_infinite_reverse]"></div>
-
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-4/5 h-4/5 glass-card rounded-[3rem] overflow-hidden rotate-3 shadow-2xl">
-                  <AnimatePresence mode="wait">
-                    <motion.img
-                      key={index}
-                      initial={{ opacity: 0, scale: 1.1 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      transition={{ duration: 1 }}
-                      src={data[index].image}
-                      className="w-full h-full object-cover grayscale"
-                      alt="Testimonial background"
-                    />
-                  </AnimatePresence>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-
-                  <div className="absolute bottom-8 left-8 right-8">
-                    <p className="text-[#C9A96E] text-[10px] font-bold tracking-[0.4em] uppercase mb-2">Project Success</p>
-                    <h4 className="text-white text-xl font-serif">{data[index].project}</h4>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Quote Icon */}
-              <motion.div
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -top-4 -right-4 w-20 h-20 rounded-2xl bg-[#C9A96E] flex items-center justify-center text-black text-3xl shadow-xl shadow-[#C9A96E]/20 z-20"
-              >
-                <FaQuoteRight />
-              </motion.div>
-            </div>
+          {/* Dot indicators */}
+          <div className="flex gap-1.5 flex-wrap justify-center flex-1">
+            {data.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i)}
+                className={`transition-all duration-300 rounded-full ${
+                  i === index
+                    ? "w-6 h-2 bg-[#C9A96E]"
+                    : "w-2 h-2 bg-gray-300 dark:bg-white/20 hover:bg-[#C9A96E]/50"
+                }`}
+              />
+            ))}
           </div>
+
+          {/* Slide counter */}
+          <p className="text-xs font-bold tracking-widest text-gray-400 dark:text-gray-600 uppercase shrink-0 hidden sm:block">
+            {String(index + 1).padStart(2, "0")} / {String(data.length).padStart(2, "0")}
+          </p>
 
         </div>
       </div>

@@ -10,7 +10,6 @@ export const medAi = {
   description: "A medical administration and user analytics platform designed for tracking doctor onboarding, pharmacy registrations, and patient growth telemetry.",
   tags: ["#React", "#Chart.js", "#TailwindCSS", "#Redux"],
   image: medaiImg,
-  githubLink: "https://github.com/Rakibboshunia/MedAi_Dashboard",
   liveLink: "https://medai.watch/",
   overview: "Med AI is an administrative and telemetry portal designed for healthcare management. It allows monitoring active users, onboarded doctors, and pharmacy registrations, tracking patient growth trends and medication statistics with clean interactive graphs.",
   challenges: "Building a highly interactive administration dashboard with statistics, custom user profile sliders, and data charts while keeping visual responsiveness flawless.",

@@ -10,7 +10,6 @@ export const edukai = {
   description: "An AI-powered CV automation and recruitment dashboard system for monitoring real-time workflows and processing efficiency.",
   tags: ["#React", "#Node.js", "#TailwindCSS"],
   image: img4,
-  githubLink: "https://github.com/Rakibboshunia/EduKai",
   liveLink: "https://edukaicvsub.edukai.co.uk/",
   overview: "Edukai is a sophisticated automation engine designed to streamline recruitment processes. It features a real-time dashboard for monitoring CV imports, quality checks, and submission success rates.",
   challenges: "Ensuring real-time data synchronization across various automation stages while maintaining a clean, intuitive interface for super admins to manage complex recruitment workflows.",

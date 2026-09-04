@@ -10,7 +10,6 @@ export const geoPulse = {
   description: "An interactive World Atlas application providing detailed country information, search functionality, and a responsive glassmorphism UI.",
   tags: ["#React", "#TailwindCSS", "#FramerMotion"],
   image: geoPulseImg,
-  githubLink: "https://github.com/Rakibboshunia",
   liveLink: "https://geopulse-ashy.vercel.app/",
   overview: "GeoPulse is a comprehensive World Atlas web application. It features a modern glassmorphism design, providing users with interactive country data, robust search interfaces, and fluid animations.",
   challenges: "Migrating a custom CSS architecture to Tailwind CSS while preserving complex glassmorphism effects and ensuring optimal cross-device responsiveness.",

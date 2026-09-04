@@ -159,9 +159,19 @@ const Navbar = () => {
               {isOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
 
-            <Link to="/contact" className="hidden lg:block px-8 py-2.5 bg-[#C9A96E] text-black font-bold text-[10px] tracking-widest uppercase rounded-full hover:scale-105 transition-transform">
+            <Link to="/contact" className="hidden lg:flex items-center gap-2 px-8 py-2.5 bg-[#C9A96E] text-black font-bold text-[10px] tracking-widest uppercase rounded-full hover:scale-105 transition-transform">
               Let's Talk
             </Link>
+            <a
+              href="mailto:official.alrakib@gmail.com"
+              className="hidden lg:flex items-center gap-2 px-6 py-2.5 border border-[#C9A96E] text-[#C9A96E] font-bold text-[10px] tracking-widest uppercase rounded-full hover:bg-[#C9A96E] hover:text-black transition-all duration-300 relative group overflow-hidden"
+            >
+              <span className="absolute inset-0 bg-[#C9A96E]/10 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <span className="relative flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                Hire Me
+              </span>
+            </a>
           </div>
         </div>
       </div>
@@ -216,7 +226,7 @@ const Navbar = () => {
 
             {/* Immersive Menu Footer Details */}
             <div className="relative z-10 flex flex-col md:flex-row gap-8 justify-between items-start md:items-end border-t border-white/5 pt-8">
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-4">
                 <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-white/30">
                   OFFICIAL EMAIL
                 </span>
@@ -225,6 +235,14 @@ const Navbar = () => {
                   className="font-mono text-sm text-[#C9A96E] hover:text-white transition-colors"
                 >
                   official.alrakib@gmail.com
+                </a>
+                <a
+                  href="mailto:official.alrakib@gmail.com"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center gap-2 w-fit px-8 py-3 border border-[#C9A96E] text-[#C9A96E] font-bold text-xs tracking-widest uppercase rounded-full hover:bg-[#C9A96E] hover:text-black transition-all duration-300"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                  Hire Me
                 </a>
               </div>
 
