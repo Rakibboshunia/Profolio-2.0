@@ -2,7 +2,7 @@ import saasImg from "../assets/saas.webp";
 
 export const wordpressProjectsData = [
   {
-    id: 17,
+    id: 18,
     title: "Squeaky Clean: Agency Web Platform",
     category: "WordPress",
     badgeLabel: "AGENCY WEBSITE",
@@ -12,7 +12,7 @@ export const wordpressProjectsData = [
     tags: ["#WordPress", "#Agency", "#Elementor"],
     image: saasImg,
     githubLink: "",
-    liveLink: "https://wp5.fireai.agency",
+    liveLink: "https://squeakycleanexpertsllc.com/",
     overview: "Squeaky Clean is a digital agency platform built to function as a primary lead generation engine. By leveraging a streamlined user experience and strategic call-to-actions, it positions the agency as a premium service provider.",
     challenges: "The primary business challenge was differentiating the agency in a saturated market while ensuring the site loaded under 2 seconds to prevent lead drop-off.",
     solution: "Developed a highly optimized, lightweight architecture using Elementor. Implemented advanced caching strategies and structured data to ensure high SEO visibility and instant load times.",
@@ -22,7 +22,7 @@ export const wordpressProjectsData = [
     features: ["High-converting portfolio showcases", "Automated lead capture forms", "Performance-optimized asset delivery"]
   },
   {
-    id: 16,
+    id: 19,
     title: "Danpark Biz: Corporate B2B Platform",
     category: "WordPress",
     badgeLabel: "BUSINESS WEBSITE",
@@ -42,7 +42,7 @@ export const wordpressProjectsData = [
     features: ["Enterprise-grade information architecture", "Responsive B2B engagement portals", "Secure contact management integrations"]
   },
   {
-    id: 15,
+    id: 20,
     title: "Vartevar: Business Digital Storefront",
     category: "WordPress",
     badgeLabel: "BUSINESS WEBSITE",
@@ -62,7 +62,7 @@ export const wordpressProjectsData = [
     features: ["Dynamic content management workflows", "Technical SEO foundation", "Frictionless conversion funnels"]
   },
   {
-    id: 14,
+    id: 21,
     title: "Allswell: Accessible Care Platform",
     category: "WordPress",
     badgeLabel: "CARE SERVICES",
@@ -72,7 +72,7 @@ export const wordpressProjectsData = [
     tags: ["#WordPress", "#Accessible", "#WebDesign"],
     image: saasImg,
     githubLink: "",
-    liveLink: "https://allswellcareservices.co.uk",
+    liveLink: "http://allswellcareservices.co.uk/",
     overview: "Allswell Care Services needed a platform that prioritized accessibility and trust. The platform was engineered to provide clear, empathetic communication and easy access to critical healthcare services.",
     challenges: "Balancing a warm, welcoming aesthetic with strict web accessibility standards (WCAG) to ensure the platform is usable by elderly and disabled demographics.",
     solution: "Implemented high-contrast color systems, scalable typography, and screen-reader optimized code alongside a comforting visual identity to build trust.",

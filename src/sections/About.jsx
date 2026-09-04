@@ -121,9 +121,9 @@ const About = () => {
             </h3>
 
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base md:text-lg mb-8 max-w-xl">
-              As a specialized Frontend Developer, I bridge the gap between complex functionality and stunning visual design. I build applications that don't just work flawlessly—they leave a lasting impression.
+              As an experienced Frontend Developer expanding my expertise into Full Stack development, I bridge the gap between complex functionality and stunning visual design. I build applications that don't just work flawlessly—they leave a lasting impression.
               <br /><br />
-              My expertise lies in React ecosystem, interactive animations, and responsive architectures, ensuring every project is highly scalable, fast, and visually premium.
+              My expertise lies in custom coded web applications (React & Next.js), as well as comprehensive Shopify store setups and advanced WordPress development. I have a proven track record of delivering successful projects for clients worldwide, ensuring every platform is highly scalable, fast, and visually premium. While my professional foundation is in Frontend and CMS engineering, I am actively mastering backend technologies to evolve into a complete Full Stack Developer.
             </p>
 
             {/* 📊 Stats Grid */}

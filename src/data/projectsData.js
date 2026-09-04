@@ -11,6 +11,7 @@ import { roryAdmin } from "./projects/roryAdmin";
 import { dayNightNews } from "./projects/dayNightNews";
 import { orebi } from "./projects/orebi";
 import { wordpressProjectsData } from "./wordpressProjectsData";
+import { shopifyProjectsData } from "./shopifyProjectsData";
 import { medicarePro } from "./projects/medicarePro";
 import { nextResumeAi } from "./projects/nextResumeAi";
 import { taskflowAi } from "./projects/taskflowAi";
@@ -31,5 +32,6 @@ export const projectsData = [
   roryAdmin,
   dayNightNews,
   orebi,
-  ...wordpressProjectsData
+  ...wordpressProjectsData,
+  ...shopifyProjectsData
 ];

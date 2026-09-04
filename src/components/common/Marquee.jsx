@@ -5,7 +5,7 @@ import { SiMongodb, SiJavascript, SiTailwindcss, SiNextdotjs } from "react-icons
 const Marquee = () => {
   const marqueeItems = [
     { text: "UI/UX DESIGN", icon: <FaFigma /> },
-    { text: "FRONTEND DEVELOPER", icon: <FaReact /> },
+    { text: "FULL STACK DEVELOPER", icon: <FaReact /> },
     { text: "REACT JS EXPERT", icon: <FaReact /> },
     { text: "NEXT JS EXPERT", icon: <SiNextdotjs /> },
     { text: "MERN STACK", icon: <SiMongodb /> },

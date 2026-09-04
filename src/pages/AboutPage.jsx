@@ -54,7 +54,7 @@ const AboutPage = () => {
               
               <div className="absolute bottom-8 left-8 right-8">
                 <h3 className="text-white text-2xl font-serif mb-1">Al-Rakeb Boshunia</h3>
-                <p className="text-[#C9A96E] text-xs font-bold tracking-[0.2em] uppercase">Frontend Architect</p>
+                <p className="text-[#C9A96E] text-xs font-bold tracking-[0.2em] uppercase">Frontend & Aspiring Full Stack</p>
               </div>
             </div>
 
@@ -110,7 +110,9 @@ const AboutPage = () => {
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8 text-lg font-light">
                 Driven by the desire to bring my designs to life, I transitioned into software engineering. Pursuing a B.Sc in Computer Science provided me with the foundational knowledge of data structures, algorithms, and system design. But it was my hands-on experience with modern JavaScript frameworks that truly unlocked my potential. 
                 <br/><br/>
-                I mastered <strong>React, Next.js, and Redux</strong> to build lightning-fast, scalable frontend architectures. By bridging the gap between high-end design and robust backend logic (Node.js, Express, MongoDB), I evolved from a designer into a Full-Stack Frontend Architect.
+                I have developed deep expertise in crafting <strong>Custom Coded Web Applications</strong> using React and Next.js. Beyond custom development, I am highly experienced in complete <strong>Shopify Store Setup</strong> and advanced <strong>WordPress Development</strong>. I have had the privilege of working with a diverse range of <strong>clients worldwide</strong>, delivering high-converting, scalable e-commerce and agency platforms that are both visually premium and technically robust.
+                <br/><br/>
+                While my foundation and professional experience lie strongly in Frontend engineering and CMS platforms, I am actively expanding my skill set by mastering backend technologies (Node.js, Express, MongoDB) to transition into a complete Full Stack Developer.
               </p>
 
               <h3 className="text-3xl font-serif text-gray-900 dark:text-white mb-6 mt-12">My Professional Philosophy</h3>
@@ -131,7 +133,7 @@ const AboutPage = () => {
 
               <h3 className="text-3xl font-serif text-gray-900 dark:text-white mb-6 mt-12">The Present & Future</h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-10 text-lg font-light">
-                Today, as a Frontend Developer at Fire AI - Betopia Group, I am responsible for architecting SaaS platforms, interactive e-commerce sites, and highly secure corporate portals. I am continuously exploring the bleeding edge of web technologies, including AI integrations and advanced WebGL rendering, to push the boundaries of what is possible in a browser.
+                Today, as a Frontend Developer at Fire AI - Betopia Group, I am responsible for architecting SaaS platforms, interactive e-commerce sites, and highly secure corporate portals, while concurrently mastering backend technologies to become a complete Full Stack Engineer. I am continuously exploring the bleeding edge of web technologies, including AI integrations and advanced WebGL rendering, to push the boundaries of what is possible in a browser.
               </p>
 
               <div className="flex flex-wrap gap-6 pt-6 border-t border-gray-200 dark:border-white/10">

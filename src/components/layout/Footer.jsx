@@ -15,8 +15,9 @@ const navLinks = [
 
 const specialties = [
   "Frontend Architecture",
-  "UI/UX Engineering",
   "React & Next.js Ecosystem",
+  "Shopify Store Setup",
+  "WordPress Development",
   "Performance & SEO Optimization"
 ];
 

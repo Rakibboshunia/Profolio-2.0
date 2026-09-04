@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import SEOHelmet from "../components/common/SEOHelmet";
 
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaWordpress, FaElementor } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiJavascript, SiTailwindcss, SiNextdotjs, SiBootstrap } from "react-icons/si";
+import { SiMongodb, SiExpress, SiJavascript, SiTailwindcss, SiNextdotjs, SiBootstrap, SiShopify } from "react-icons/si";
 
 const mernSkills = [
   { name: "HTML5", icon: <FaHtml5 /> },
@@ -18,6 +18,7 @@ const mernSkills = [
   { name: "MongoDB", icon: <SiMongodb /> },
   { name: "WordPress", icon: <FaWordpress /> },
   { name: "Elementor Pro", icon: <FaElementor /> },
+  { name: "Shopify", icon: <SiShopify /> },
 ];
 
 const experiences = [
@@ -31,7 +32,7 @@ const experiences = [
     role: "Front-end Developer",
     company: "Freelance | Part-time",
     year: "February 2025 – Present",
-    desc: "Developed responsive web applications using React.js. Built business, e-commerce, and portfolio websites.",
+    desc: "Developed responsive custom web applications using React.js and delivered high-converting e-commerce and agency platforms using Shopify and WordPress for real-world clients.",
   },
   {
     role: "Graphic Designer For POD (print on demand) Store",

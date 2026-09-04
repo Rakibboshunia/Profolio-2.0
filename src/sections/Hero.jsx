@@ -40,7 +40,7 @@ const Hero = () => {
               </motion.div>
 
               <span className="text-[#C9A96E] font-serif tracking-[0.4em] text-xs md:text-sm uppercase mb-4 md:mb-6 block font-bold shadow-black drop-shadow-md">
-                • Specialized in Frontend Excellence
+                • Custom Code | WordPress | Shopify
               </span>
 
               <h1 className="text-5xl md:text-6xl lg:text-[7rem] font-serif leading-[0.9] tracking-tighter mb-6 md:mb-8 drop-shadow-2xl mix-blend-lighten text-white">
@@ -50,8 +50,7 @@ const Hero = () => {
               </h1>
 
               <p className="text-gray-300 text-base md:text-xl max-w-xl mb-8 md:mb-12 drop-shadow-lg font-medium">
-                I build high-performance, visually striking web applications that
-                bridge the gap between complex engineering and pure aesthetic.
+                I build high-performance web applications bridging complex engineering with pure aesthetics. Specializing in Custom Code, WordPress, and Shopify solutions for real-world clients.
               </p>
 
               <div className="flex flex-wrap gap-6 md:gap-8 items-center">
@@ -113,7 +112,7 @@ const Hero = () => {
             >
               <div>
                 <h4 className="text-white font-serif text-sm md:text-base tracking-wider mb-1">Al-Rakeb Boshunia</h4>
-                <p className="text-[9px] md:text-[10px] text-[#C9A96E] font-bold tracking-[0.25em] uppercase">Frontend Architect</p>
+                <p className="text-[9px] md:text-[10px] text-[#C9A96E] font-bold tracking-[0.25em] uppercase">Frontend & Aspiring Full Stack</p>
               </div>
               <div className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 group-hover:border-[#C9A96E] group-hover:text-[#C9A96E] transition-all duration-500 bg-white/5">
                 <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { projectsData } from "../data/projectsData";
 import SpotlightCard from "../components/common/SpotlightCard";
 
-const categories = ["All", "E-Commerce", "Landing Page", "Dashboard", "SaaS & Web App", "WordPress"];
+const categories = ["All", "E-Commerce", "Landing Page", "Dashboard", "SaaS & Web App", "WordPress", "Shopify"];
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState("All");
